@@ -1,10 +1,10 @@
 package TestPackage;
-import org.example.Connexion_BDD;
-import org.example.Connexion_BDD.*;
+import org.example.BaseDeDonnees;
 
 public class TestConnexionBDD {
     public static void main(String[] args)
     {
-        Connexion_BDD connexion1 = new Connexion_BDD("projet_netflix", "root", "");
+        BaseDeDonnees BDD1 = new BaseDeDonnees("projet_netflix", "root", "");
+        BDD1.requeteSQL("INSERT INTO films (Nom, Synopsis, Categories, LIEN) VALUES ('Fight Club', 'Combat secret', 'Action', 'ece.fr')");
     }
 }
