@@ -52,7 +52,9 @@ public class rechercheFilm {
 
         try
         {
-            ResultSet rs = SQLPart.recupererData(SelectFilm.getText());
+            BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
+            BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText()+ "%'");
+            ResultSet rs = BDD_Projet_Netflix.getResultat();
             if (rs != null) {
                 while (rs.next())
                 {
