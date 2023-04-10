@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="Classe base de données finalisée et tests fonctionnels réalisés.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheFilm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -54,7 +56,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.RechercheFilm">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -66,6 +68,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RechercheFilm" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RechercheFilm.rechercheApplication" />
+      <module name="Projet_NETFLIX" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Java\javafx-sdk-20\lib&quot; --add-modules javafx.controls,javafx.fxml " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,6 +95,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.RechercheFilm" />
       <item itemvalue="Application.TestConnexionBDD" />
     </list>
     <recent_temporary>
