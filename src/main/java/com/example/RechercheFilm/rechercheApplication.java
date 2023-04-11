@@ -1,4 +1,4 @@
-package RechercheFilm;
+package com.example.RechercheFilm;
 
 import org.example.*;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
 public class rechercheApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(rechercheApplication.class.getResource("resources/org/example/rechercheFilm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(rechercheApplication.class.getResource("rechercheFilm.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Hello!");

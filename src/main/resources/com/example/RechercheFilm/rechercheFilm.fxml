@@ -12,7 +12,7 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;"
             xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="RechercheFilm.rechercheFilm">
+            fx:controller="com.example.RechercheFilm.rechercheFilm">
     <VBox id="virtBox" fx:id="virtBox" alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0"
           style="-fx-background-color: Black;">
         <padding>

@@ -1,4 +1,4 @@
-package RechercheFilm;
+package com.example.RechercheFilm;
 
 import org.example.*;
 
