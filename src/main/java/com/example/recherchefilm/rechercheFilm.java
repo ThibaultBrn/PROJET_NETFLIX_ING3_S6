@@ -1,8 +1,10 @@
 package com.example.recherchefilm;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -15,10 +17,12 @@ import javafx.scene.text.Font;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class rechercheFilm {
+public class rechercheFilm implements Initializable {
 
 
     int nbEntrees;
@@ -28,6 +32,7 @@ public class rechercheFilm {
 
     @FXML
     private VBox virtBox;
+
 
     @FXML
     public void rechercherFilm()
@@ -60,6 +65,8 @@ public class rechercheFilm {
                     film.setAlignment(Pos.CENTER_LEFT);
                     URI link = new URI(lien);
 
+                    String synopsis = rs.getString("Synopsis");
+
                     film.setOnMouseClicked(e ->
                     {
                         try {
@@ -67,6 +74,27 @@ public class rechercheFilm {
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }
+                    });
+                    Label syno = new Label();
+                    film.setOnMouseEntered(e ->
+                    {
+                        film.setStyle("-fx-border-color:purple; -fx-background-color:rgba(150, 150, 150, 0.2);-fx-border-width: 2");
+                        //film.setStyle("-fx-background-color:rgba(0, 100, 100, 0.5)");
+                        //film.setStyle("-fx-border-width: 2");
+                        film.setCursor(Cursor.HAND);
+
+                        syno.setText(synopsis);
+                        syno.setTextFill(Color.WHITE);
+                        //VBox.setMargin(lab1,new Insets(0,0,0,30));
+                        syno.setPadding(new Insets(0,0,0,70));
+                        //syno.set
+                        film.getChildren().addAll(syno);
+                    });
+
+                    film.setOnMouseExited(e ->
+                    {
+                        film.setStyle("-fx-border-color:none");
+                        film.getChildren().remove(syno);
                     });
 
 
@@ -127,5 +155,12 @@ public class rechercheFilm {
             System.out.println("Affichage films");
         }
 
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        rechercherFilm();
     }
 }

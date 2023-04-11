@@ -12,7 +12,7 @@ public class rechercheApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(rechercheApplication.class.getResource("rechercheFilm.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("Recherche Film");
         stage.setScene(scene);
         stage.show();
     }
