@@ -1,8 +1,11 @@
-module RechercheFilm {
+module pageFilm {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
+    requires javafx.web;
     requires java.sql;
     requires java.desktop;
-    opens com.example.RechercheFilm to javafx.fxml;
-    exports com.example.RechercheFilm;
+    opens pagefilm to javafx.fxml;
+    exports pagefilm;
+
 }

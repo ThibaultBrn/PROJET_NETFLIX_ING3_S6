@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class BaseDeDonnees {
 
-    private String nomDeLaBDD;
+    private final String nomDeLaBDD;
     private Connection connexionALaBaseDeDonnees;
     private Statement stmt = null;
     private ResultSet resultat = null;
