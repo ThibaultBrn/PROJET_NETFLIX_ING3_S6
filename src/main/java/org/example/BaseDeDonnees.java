@@ -47,4 +47,9 @@ public class BaseDeDonnees {
             System.out.println("Echec lors de l'execution de la requete " + requete + "pour la BDD " + nomDeLaBDD);
         }
     }
+
+    public ResultSet getResultat()
+    {
+        return resultat;
+    }
 }
