@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="Classe base de données finalisée et tests fonctionnels réalisés.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
-  <component name="RunManager" selected="Application.Main">
+}]]></component>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -83,6 +84,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.TestConnexionBDD" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestConnexionBDD" />
@@ -119,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680897021587</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creation de la classe Connection Utilisateur.">
+      <created>1681501047812</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681501047812</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,6 +139,10 @@
     <MESSAGE value="Mise en place de la classe Connexion_BDD et ajout du fichier SQL de la base de données des films." />
     <MESSAGE value="Mise en place des constructeurs pour se connecter à une BDD mySQL." />
     <MESSAGE value="Classe base de données finalisée et tests fonctionnels réalisés." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe base de données finalisée et tests fonctionnels réalisés." />
+    <MESSAGE value="Creation de la classe Connection Utilisateur." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation de la classe Connection Utilisateur." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
