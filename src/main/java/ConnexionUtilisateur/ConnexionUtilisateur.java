@@ -21,13 +21,14 @@ public class ConnexionUtilisateur {
         do {
             System.out.println("1 : Se co en tant qu'utilisateur || 2 : Se co en tant qu'admin || 3 : Quitter");
             choixMenu = scanner.nextInt();
+            scanner.nextLine();
             if(choixMenu == 1)
             {
-
+                connexionUtilisateurSimple();
             }
             else if(choixMenu == 2)
             {
-
+                connexionAdmin();
             }
             else
             {
@@ -38,19 +39,29 @@ public class ConnexionUtilisateur {
 
     public void connexionUtilisateurSimple()
     {
+        String pseudo;
         System.out.println("Entrez votre pseudo :");
+        pseudo = scanner.nextLine();
+    }
 
+    public void connexionAdmin()
+    {
+        String pseudo;
+        System.out.println("Entrez votre pseudo :");
+        pseudo = scanner.nextLine();
+        isAdministrateur(pseudo);
     }
 
     public boolean isAdministrateur(String pseudo)
     {
         ResultSet res = null;
         boolean isAdmin = false;
-        BDD.requeteSQL("SELECT DroitsAdministrateur FROM utilisateur WHERE Pseudo = '" + pseudo + "'");
+        BDD.requeteSQL("SELECT DroitsAdministrateur FROM utilisateur WHERE Pseudo = '" + pseudo + "';");
         res = BDD.getResultat();
         try{
             isAdmin = res.getBoolean("DroitsAdministrateur");
         }catch(SQLException e){
+            try{res.close();}catch (SQLException E){System.out.println("Impossible de fermer le registre de resultat dans la methode boolean isUtilisateur()");}
             System.out.println("Pseudo introuvable dans la base de donnees");
         }
         if(isAdmin)
