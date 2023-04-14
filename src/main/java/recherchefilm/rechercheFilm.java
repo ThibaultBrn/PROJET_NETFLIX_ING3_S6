@@ -1,10 +1,13 @@
-package com.example.RechercheFilm;
-
-import org.example.*;
+package recherchefilm;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -13,14 +16,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class rechercheFilm {
+public class rechercheFilm implements Initializable {
 
 
     int nbEntrees;
@@ -31,9 +35,26 @@ public class rechercheFilm {
     @FXML
     private VBox virtBox;
 
+
+    public void ouvrirFilm(String nomFilm) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageFilm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
+        Stage stage = new Stage();
+        pageFilm controller = fxmlLoader.getController();
+        controller.setNomFilm(nomFilm);
+
+
+        stage.setTitle(nomFilm);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+
+    }
     @FXML
     public void rechercherFilm()
     {
+        SQLPart.connectionSQL();
         System.out.println("Barre de recherche: " + SelectFilm.getText());
 
 
@@ -52,25 +73,35 @@ public class rechercheFilm {
 
         try
         {
-            BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
-            BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText()+ "%'");
-            ResultSet rs = BDD_Projet_Netflix.getResultat();
+            ResultSet rs = SQLPart.recupererData(SelectFilm.getText());
             if (rs != null) {
                 while (rs.next())
                 {
 
                     HBox film = new HBox();
-                    String lien = rs.getString("Lien");
                     film.setAlignment(Pos.CENTER_LEFT);
-                    URI link = new URI(lien);
+
+                    String synopsis = rs.getString("Synopsis");
+                    String nomFilm = rs.getString("NomFilm");
 
                     film.setOnMouseClicked(e ->
                     {
                         try {
-                            java.awt.Desktop.getDesktop().browse(link);
+                            ouvrirFilm(nomFilm);
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }
+
+                        Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
+                        stage.close();
+                    });
+                    Label syno = new Label();
+
+
+                    film.setOnMouseExited(e ->
+                    {
+                        film.setStyle("-fx-border-color:none");
+                        film.getChildren().remove(syno);
                     });
 
 
@@ -91,6 +122,7 @@ public class rechercheFilm {
                     lab1.setTextFill(Color.PURPLE);
                     lab1.setFont(new Font(30));
                     lab1.setUnderline(true);
+                    lab1.setMinWidth(400);
 
                     Label lab2 = new Label();
                     lab2.setText("Réalisateur : "+rs.getString("PrenomRealisateur") +" "+ rs.getString("NomRealisateur"));
@@ -115,6 +147,20 @@ public class rechercheFilm {
 
                     virtBox.getChildren().addAll(film);
 
+                    film.setOnMouseEntered(e ->
+                    {
+                        film.setStyle("-fx-border-color:purple; -fx-background-color:rgba(150, 150, 150, 0.2);-fx-border-width: 2");
+                        film.setCursor(Cursor.HAND);
+
+                        syno.setText(synopsis);
+                        syno.setTextFill(Color.WHITE);
+                        syno.setAlignment(Pos.CENTER_RIGHT);
+                        syno.setFont(new Font(15));
+                        syno.setPadding(new Insets(0,20,0,0));
+                        syno.setTextAlignment(TextAlignment.JUSTIFY);
+                        syno.setWrapText(true);
+                        film.getChildren().addAll(syno);
+                    });
 
 
 
@@ -126,10 +172,17 @@ public class rechercheFilm {
                 }
             }
         }
-        catch (SQLException | URISyntaxException e)
+        catch (SQLException e)
         {
-            System.out.println("Affichage films");
+            System.out.println("Erreur affichage films");
         }
 
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        rechercherFilm();
     }
 }

@@ -1,5 +1,5 @@
 package TestPackage;
-import org.example.BaseDeDonnees;
+import example.BaseDeDonnees;
 
 public class TestConnexionBDD {
     public static void main(String[] args)
