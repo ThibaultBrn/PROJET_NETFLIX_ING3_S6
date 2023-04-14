@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheFilm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BaseDeDonnees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +53,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/yassi/Desktop/ajoutFilm - Copie",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yassi\Desktop\ajoutCategorie\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yassi\Desktop\ajoutCategorie\src\java" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.RechercheFilm" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="Projet_NETFLIX" />
+      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.AjoutFilmApplication" />
+      <module name="rechercheFilm" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -102,6 +112,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ajoutCategorie" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ajoutCategorie" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.RechercheFilm" />
@@ -109,6 +132,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestConnexionBDD" />
         <item itemvalue="Application.TestConnexionBDD" />
       </list>
     </recent_temporary>
@@ -157,7 +181,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Recherche-film" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
