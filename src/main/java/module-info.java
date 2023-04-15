@@ -1,9 +1,10 @@
-module com.example.recherchefilm {
+module RechercheFilm {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
+    requires javafx.web;
     requires java.sql;
     requires java.desktop;
-    requires javafx.web;
     opens recherchefilm to javafx.fxml;
     exports recherchefilm;
 }

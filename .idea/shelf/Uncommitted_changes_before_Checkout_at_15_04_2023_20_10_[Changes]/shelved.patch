@@ -1,0 +1,969 @@
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.testjavafx {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n    requires javafx.media;\r\n    requires java.sql;\r\n    requires java.desktop;\r\n\r\n    opens com.example.testjavafx to javafx.fxml;\r\n    exports com.example.testjavafx;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ b/src/main/java/module-info.java	(date 1681320889407)
+@@ -1,10 +1,13 @@
+-module com.example.testjavafx {
++module pageFilm {
++
+     requires javafx.controls;
+     requires javafx.fxml;
+     requires javafx.media;
++    requires javafx.web;
+     requires java.sql;
+     requires java.desktop;
+ 
+-    opens com.example.testjavafx to javafx.fxml;
+-    exports com.example.testjavafx;
+-}
+\ No newline at end of file
++    opens pageFilm to javafx.fxml;
++    exports pageFilm;
++
++}
+Index: mvnw.cmd
+===================================================================
+diff --git a/mvnw.cmd b/mvnw.cmd
+deleted file mode 100644
+--- a/mvnw.cmd	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,188 +0,0 @@
+-@REM ----------------------------------------------------------------------------
+-@REM Licensed to the Apache Software Foundation (ASF) under one
+-@REM or more contributor license agreements.  See the NOTICE file
+-@REM distributed with this work for additional information
+-@REM regarding copyright ownership.  The ASF licenses this file
+-@REM to you under the Apache License, Version 2.0 (the
+-@REM "License"); you may not use this file except in compliance
+-@REM with the License.  You may obtain a copy of the License at
+-@REM
+-@REM    https://www.apache.org/licenses/LICENSE-2.0
+-@REM
+-@REM Unless required by applicable law or agreed to in writing,
+-@REM software distributed under the License is distributed on an
+-@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+-@REM KIND, either express or implied.  See the License for the
+-@REM specific language governing permissions and limitations
+-@REM under the License.
+-@REM ----------------------------------------------------------------------------
+-
+-@REM ----------------------------------------------------------------------------
+-@REM Maven Start Up Batch script
+-@REM
+-@REM Required ENV vars:
+-@REM JAVA_HOME - location of a JDK home dir
+-@REM
+-@REM Optional ENV vars
+-@REM M2_HOME - location of maven2's installed home dir
+-@REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands
+-@REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending
+-@REM MAVEN_OPTS - parameters passed to the Java VM when running Maven
+-@REM     e.g. to debug Maven itself, use
+-@REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+-@REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files
+-@REM ----------------------------------------------------------------------------
+-
+-@REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'
+-@echo off
+-@REM set title of command window
+-title %0
+-@REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'
+-@if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%
+-
+-@REM set %HOME% to equivalent of $HOME
+-if "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")
+-
+-@REM Execute a user defined script before this one
+-if not "%MAVEN_SKIP_RC%" == "" goto skipRcPre
+-@REM check for pre script, once with legacy .bat ending and once with .cmd ending
+-if exist "%USERPROFILE%\mavenrc_pre.bat" call "%USERPROFILE%\mavenrc_pre.bat" %*
+-if exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*
+-:skipRcPre
+-
+-@setlocal
+-
+-set ERROR_CODE=0
+-
+-@REM To isolate internal variables from possible post scripts, we use another setlocal
+-@setlocal
+-
+-@REM ==== START VALIDATION ====
+-if not "%JAVA_HOME%" == "" goto OkJHome
+-
+-echo.
+-echo Error: JAVA_HOME not found in your environment. >&2
+-echo Please set the JAVA_HOME variable in your environment to match the >&2
+-echo location of your Java installation. >&2
+-echo.
+-goto error
+-
+-:OkJHome
+-if exist "%JAVA_HOME%\bin\java.exe" goto init
+-
+-echo.
+-echo Error: JAVA_HOME is set to an invalid directory. >&2
+-echo JAVA_HOME = "%JAVA_HOME%" >&2
+-echo Please set the JAVA_HOME variable in your environment to match the >&2
+-echo location of your Java installation. >&2
+-echo.
+-goto error
+-
+-@REM ==== END VALIDATION ====
+-
+-:init
+-
+-@REM Find the project base dir, i.e. the directory that contains the folder ".mvn".
+-@REM Fallback to current working directory if not found.
+-
+-set MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
+-IF NOT "%MAVEN_PROJECTBASEDIR%"=="" goto endDetectBaseDir
+-
+-set EXEC_DIR=%CD%
+-set WDIR=%EXEC_DIR%
+-:findBaseDir
+-IF EXIST "%WDIR%"\.mvn goto baseDirFound
+-cd ..
+-IF "%WDIR%"=="%CD%" goto baseDirNotFound
+-set WDIR=%CD%
+-goto findBaseDir
+-
+-:baseDirFound
+-set MAVEN_PROJECTBASEDIR=%WDIR%
+-cd "%EXEC_DIR%"
+-goto endDetectBaseDir
+-
+-:baseDirNotFound
+-set MAVEN_PROJECTBASEDIR=%EXEC_DIR%
+-cd "%EXEC_DIR%"
+-
+-:endDetectBaseDir
+-
+-IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig
+-
+-@setlocal EnableExtensions EnableDelayedExpansion
+-for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
+-@endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%
+-
+-:endReadAdditionalConfig
+-
+-SET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"
+-set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
+-set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+-
+-set DOWNLOAD_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
+-
+-FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO (
+-    IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B
+-)
+-
+-@REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
+-@REM This allows using the maven wrapper in projects that prohibit checking in binary data.
+-if exist %WRAPPER_JAR% (
+-    if "%MVNW_VERBOSE%" == "true" (
+-        echo Found %WRAPPER_JAR%
+-    )
+-) else (
+-    if not "%MVNW_REPOURL%" == "" (
+-        SET DOWNLOAD_URL="%MVNW_REPOURL%/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
+-    )
+-    if "%MVNW_VERBOSE%" == "true" (
+-        echo Couldn't find %WRAPPER_JAR%, downloading it ...
+-        echo Downloading from: %DOWNLOAD_URL%
+-    )
+-
+-    powershell -Command "&{"^
+-		"$webclient = new-object System.Net.WebClient;"^
+-		"if (-not ([string]::IsNullOrEmpty('%MVNW_USERNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^
+-		"$webclient.Credentials = new-object System.Net.NetworkCredential('%MVNW_USERNAME%', '%MVNW_PASSWORD%');"^
+-		"}"^
+-		"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webclient.DownloadFile('%DOWNLOAD_URL%', '%WRAPPER_JAR%')"^
+-		"}"
+-    if "%MVNW_VERBOSE%" == "true" (
+-        echo Finished downloading %WRAPPER_JAR%
+-    )
+-)
+-@REM End of extension
+-
+-@REM Provide a "standardized" way to retrieve the CLI args that will
+-@REM work with both Windows and non-Windows executions.
+-set MAVEN_CMD_LINE_ARGS=%*
+-
+-%MAVEN_JAVA_EXE% ^
+-  %JVM_CONFIG_MAVEN_PROPS% ^
+-  %MAVEN_OPTS% ^
+-  %MAVEN_DEBUG_OPTS% ^
+-  -classpath %WRAPPER_JAR% ^
+-  "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" ^
+-  %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*
+-if ERRORLEVEL 1 goto error
+-goto end
+-
+-:error
+-set ERROR_CODE=1
+-
+-:end
+-@endlocal & set ERROR_CODE=%ERROR_CODE%
+-
+-if not "%MAVEN_SKIP_RC%"=="" goto skipRcPost
+-@REM check for post script, once with legacy .bat ending and once with .cmd ending
+-if exist "%USERPROFILE%\mavenrc_post.bat" call "%USERPROFILE%\mavenrc_post.bat"
+-if exist "%USERPROFILE%\mavenrc_post.cmd" call "%USERPROFILE%\mavenrc_post.cmd"
+-:skipRcPost
+-
+-@REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'
+-if "%MAVEN_BATCH_PAUSE%"=="on" pause
+-
+-if "%MAVEN_TERMINATE_CMD%"=="on" exit %ERROR_CODE%
+-
+-cmd /C exit /B %ERROR_CODE%
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/java/com/example/testjavafx/AjoutFilmApplication.java
+===================================================================
+diff --git a/src/main/java/com/example/testjavafx/AjoutFilmApplication.java b/src/main/java/com/example/testjavafx/AjoutFilmApplication.java
+deleted file mode 100644
+--- a/src/main/java/com/example/testjavafx/AjoutFilmApplication.java	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,22 +0,0 @@
+-package com.example.testjavafx;
+-
+-import javafx.application.Application;
+-import javafx.fxml.FXMLLoader;
+-import javafx.scene.Scene;
+-import javafx.stage.Stage;
+-import java.io.IOException;
+-
+-public class AjoutFilmApplication extends Application {
+-    @Override
+-    public void start(Stage stage) throws IOException {
+-        FXMLLoader fxmlLoader = new FXMLLoader(AjoutFilmApplication.class.getResource("ajoutFilm.fxml"));
+-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+-        stage.setTitle("Hello!");
+-        stage.setScene(scene);
+-        stage.show();
+-    }
+-
+-    public static void main(String[] args) {
+-        launch();
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/com/example/testjavafx/AjoutFilm.java
+===================================================================
+diff --git a/src/main/java/com/example/testjavafx/AjoutFilm.java b/src/main/java/com/example/testjavafx/AjoutFilm.java
+deleted file mode 100644
+--- a/src/main/java/com/example/testjavafx/AjoutFilm.java	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,36 +0,0 @@
+-package com.example.testjavafx;
+-
+-import javafx.fxml.FXML;
+-
+-import javafx.scene.control.TextField;
+-
+-
+-public class AjoutFilm{
+-
+-    @FXML private TextField nomFilm;
+-    @FXML private TextField dureeFilm;
+-    @FXML private TextField lienFilm;
+-    @FXML private TextField synopsisFilm;
+-    @FXML private TextField nomReal;
+-    @FXML private TextField prenomReal;
+-    @FXML private TextField anneeSortie;
+-    @FXML private TextField miniature;
+-
+-
+-    @FXML
+-    protected void ajouterFilm()
+-    {
+-        System.out.println("Nom:" + nomFilm.getText());
+-        System.out.println("Duree:" + Integer.parseInt(dureeFilm.getText()));
+-        System.out.println("Lien:" + lienFilm.getText());
+-        System.out.println("Synopsis:" + synopsisFilm.getText());
+-        System.out.println("Nom Real:" + nomReal.getText());
+-        System.out.println("Prenom Real:" + prenomReal.getText());
+-        System.out.println("Annee:" + Integer.parseInt(anneeSortie.getText()));
+-        System.out.println("Miniature:" + miniature.getText());
+-
+-
+-        SQLPart.ajoutDonnee(nomFilm.getText(),Integer.parseInt(dureeFilm.getText()),lienFilm.getText(),synopsisFilm.getText().replace("'","''"),nomReal.getText(),prenomReal.getText(), Integer.parseInt(anneeSortie.getText()), miniature.getText());
+-
+-    }
+-}
+Index: src/main/java/com/example/testjavafx/SQLPart.java
+===================================================================
+diff --git a/src/main/java/com/example/testjavafx/SQLPart.java b/src/main/java/com/example/testjavafx/SQLPart.java
+deleted file mode 100644
+--- a/src/main/java/com/example/testjavafx/SQLPart.java	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,39 +0,0 @@
+-package com.example.testjavafx;
+-
+-import java.sql.*;
+-public class SQLPart {
+-    private static Connection cn;
+-
+-    public static void ajoutDonnee(String nom, int duree, String Lien, String synopsis, String nomRea, String prenomRea, int annee, String miniature)
+-    {
+-        connectionSQL();
+-        try
+-        {
+-            Statement st = cn.createStatement();
+-            String request = "INSERT INTO films VALUES ('"+nom+"',"+duree+",'"+Lien+"','"+synopsis+"','"+nomRea+"','"+prenomRea+"',"+annee+", '"+miniature+"')";
+-            //st.executeUpdate("INSERT INTO films VALUES ('Fight Club',139,'ece.fr','Combat secret','Fincher','David', '1999')");
+-            System.out.println("Requete: " + request);
+-            st.executeUpdate(request);
+-        }
+-        catch(SQLException e)
+-        {
+-            System.out.println("Probleme sql ajout");
+-            e.printStackTrace();
+-        }
+-
+-    }
+-
+-    public static void connectionSQL() {
+-
+-        try {
+-            System.out.println("CONNECTION A LA SQL");
+-            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/projet_netflix", "root", "");
+-        } catch(SQLException e)
+-        {
+-            System.out.println("Problème SQL");
+-        }
+-
+-        System.out.println("FIN CONNECTION A LA SQL");
+-
+-    }
+-}
+\ No newline at end of file
+Index: .mvn/wrapper/maven-wrapper.properties
+===================================================================
+diff --git a/.mvn/wrapper/maven-wrapper.properties b/.mvn/wrapper/maven-wrapper.properties
+deleted file mode 100644
+--- a/.mvn/wrapper/maven-wrapper.properties	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,2 +0,0 @@
+-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.5/apache-maven-3.8.5-bin.zip
+-wrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
+\ No newline at end of file
+Index: src/main/resources/com/example/testjavafx/ajoutFilm.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/testjavafx/ajoutFilm.fxml b/src/main/resources/com/example/testjavafx/ajoutFilm.fxml
+deleted file mode 100644
+--- a/src/main/resources/com/example/testjavafx/ajoutFilm.fxml	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ /dev/null	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
+@@ -1,95 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ScrollPane?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.text.Font?>
+-
+-<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testjavafx.AjoutFilm">
+-   <VBox alignment="TOP_CENTER" maxHeight="2000.0" prefHeight="1164.0" prefWidth="598.0" style="-fx-background-color: black;">
+-      <Label prefHeight="87.0" prefWidth="442.0" style="-fx-border-color: FireBrick; -fx-border-width: 4;" text="AJOUTER UN FILM" textAlignment="CENTER" textFill="WHITE" translateY="20.0">
+-         <font>
+-            <Font name="Rockwell Nova" size="44.0" />
+-         </font>
+-         <padding>
+-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+-         </padding>
+-      </Label>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="50.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Nom du film" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="nomFilm" fx:id="nomFilm" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="60.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Durée du film" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="dureeFilm" fx:id="dureeFilm" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="70.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Lien du film" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="lienFilm" fx:id="lienFilm" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="80.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Synopsis du film" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="synopsisFilm" fx:id="synopsisFilm" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="90.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Nom du réalisateur" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="nomReal" fx:id="nomReal" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="100.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Prénom du réalisateur" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="prenomReal" fx:id="prenomReal" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="110.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Année de sortie" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="anneeSortie" fx:id="anneeSortie" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: red; -fx-border-width: 2;" translateY="120.0">
+-         <Label prefHeight="32.0" prefWidth="293.0" text="Lien de la miniature" textFill="WHITE">
+-            <font>
+-               <Font name="Rockwell Nova" size="24.0" />
+-            </font>
+-         </Label>
+-         <TextField id="miniature" fx:id="miniature" prefHeight="42.0" prefWidth="220.0" />
+-      </HBox>
+-      <Button mnemonicParsing="false" onAction="#ajouterFilm" prefHeight="34.0" prefWidth="312.0" style="-fx-border-color: White; -fx-background-color: FireBrick; -fx-font-family: rockwell; -fx-text-fill: white;" text="AJOUTER LE FILM" translateY="160.0">
+-         <font>
+-            <Font size="25.0" />
+-         </font>
+-         <VBox.margin>
+-            <Insets bottom="75.0" />
+-         </VBox.margin>
+-      </Button>
+-   </VBox>
+-</ScrollPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"21be14a5-ed77-411c-9f4f-a2a749a7abd9\" name=\"Changes\" comment=\"ajout fichiers manquants\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilm.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Nx3wzSVc3hF4Bnf0yRoZhpJpPu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/ajoutFilm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.AjoutFilmApplication\">\r\n    <configuration name=\"AjoutFilmApplication\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.testjavafx.AjoutFilmApplication\" />\r\n      <module name=\"testJavaFX\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SQLPart\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.testjavafx.SQLPart\" />\r\n      <module name=\"testJavaFX\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.testjavafx.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"helloControllerApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.testjavafx.helloControllerApplication\" />\r\n      <module name=\"testJavaFX\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.testjavafx.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"replaceString\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.testjavafx.replaceString\" />\r\n      <module name=\"testJavaFX\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.testjavafx.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"ajoutFilm\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"ajoutFilm\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.AjoutFilmApplication\" />\r\n      <item itemvalue=\"Application.replaceString\" />\r\n      <item itemvalue=\"Application.SQLPart\" />\r\n      <item itemvalue=\"Application.helloControllerApplication\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.replaceString\" />\r\n        <item itemvalue=\"Application.SQLPart\" />\r\n        <item itemvalue=\"Application.helloControllerApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"21be14a5-ed77-411c-9f4f-a2a749a7abd9\" name=\"Changes\" comment=\"\" />\r\n      <created>1680592153550</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1680592153550</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"add sql\">\r\n      <created>1680957416890</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680957416890</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"ajout film dans bdd\">\r\n      <created>1681061937410</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681061937410</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"ajout film dans bdd\">\r\n      <created>1681062209241</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681062209241</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ajout fichiers manquants\">\r\n      <created>1681063213069</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681063213069</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"add sql\" />\r\n    <MESSAGE value=\"ajout film dans bdd\" />\r\n    <MESSAGE value=\"ajout fichier manquants\" />\r\n    <MESSAGE value=\"ajout fichiers manquants\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ajout fichiers manquants\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.reflect.InvocationTargetException\" package=\"java.lang.reflect\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/testJavaFX$AjoutFilmApplication.ic\" NAME=\"AjoutFilmApplication Coverage Results\" MODIFIED=\"1681058658304\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ b/.idea/workspace.xml	(date 1681580709230)
+@@ -4,9 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="21be14a5-ed77-411c-9f4f-a2a749a7abd9" name="Changes" comment="ajout fichiers manquants">
++    <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilm.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilm.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testjavafx/AjoutFilmApplication.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/testjavafx/SQLPart.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/testjavafx/ajoutFilm.fxml" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -17,6 +30,7 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="FxmlFile" />
++        <option value="module-info" />
+         <option value="Class" />
+       </list>
+     </option>
+@@ -33,19 +47,13 @@
+     <option name="stateVersion" value="1" />
+   </component>
+   <component name="MavenImportPreferences">
+-    <option name="generalSettings">
+-      <MavenGeneralSettings>
+-        <option name="mavenHome" value="Use Maven wrapper" />
+-        <option name="useMavenConfig" value="true" />
+-      </MavenGeneralSettings>
+-    </option>
+     <option name="importingSettings">
+       <MavenImportingSettings>
+         <option name="workspaceImportEnabled" value="true" />
+       </MavenImportingSettings>
+     </option>
+   </component>
+-  <component name="ProjectId" id="2Nx3wzSVc3hF4Bnf0yRoZhpJpPu" />
++  <component name="ProjectId" id="2O3bX0MrSiOPPCyVvZA2pphYmmg" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+@@ -56,37 +64,41 @@
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/ajoutFilm&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/pageAcc&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+   }
+ }</component>
+-  <component name="RunManager" selected="Application.AjoutFilmApplication">
+-    <configuration name="AjoutFilmApplication" type="Application" factoryName="Application">
+-      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.AjoutFilmApplication" />
+-      <module name="testJavaFX" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="SQLPart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.SQLPart" />
+-      <module name="testJavaFX" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.example.testjavafx.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\yassi\Desktop\crea\src\main\resources\pageFilm" />
++      <recent name="C:\Users\yassi\Desktop\crea\src\main\java" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\yassi\Desktop\PROJET_NETFLIX_ING3_S6-pageFilm\src\main\java" />
++      <recent name="C:\Users\yassi\Desktop\PROJET_NETFLIX_ING3_S6-pageFilm\target" />
++    </key>
++    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
++      <recent name="com.example.RechercheFilm" />
++    </key>
++  </component>
++  <component name="RunManager" selected="Application.pageFilmApp">
++    <configuration name="RechercheFilm" type="Application" factoryName="Application">
++      <option name="MAIN_CLASS_NAME" value="RechercheFilm.rechercheApplication" />
++      <module name="rechercheFilm" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Java\javafx-sdk-20\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="helloControllerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.helloControllerApplication" />
+-      <module name="testJavaFX" />
++    <configuration name="TestConnexionBDD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="TestPackage.TestConnexionBDD" />
++      <module name="rechercheFilm" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="com.example.testjavafx.*" />
++          <option name="PATTERN" value="TestPackage.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -94,12 +106,14 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="replaceString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.replaceString" />
+-      <module name="testJavaFX" />
++    <configuration name="pageFilmApp" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
++      <option name="MAIN_CLASS_NAME" value="pageFilm.pageFilmApp" />
++      <module name="rechercheFilm" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="com.example.testjavafx.*" />
++          <option name="PATTERN" value="org.example.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -108,70 +122,60 @@
+       </method>
+     </configuration>
+     <configuration default="true" type="JetRunConfigurationType">
+-      <module name="ajoutFilm" />
++      <module name="PROJET_NETFLIX_ING3_S6-pageFilm" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+-      <module name="ajoutFilm" />
++      <module name="PROJET_NETFLIX_ING3_S6-pageFilm" />
+       <option name="filePath" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <list>
+-      <item itemvalue="Application.AjoutFilmApplication" />
+-      <item itemvalue="Application.replaceString" />
+-      <item itemvalue="Application.SQLPart" />
+-      <item itemvalue="Application.helloControllerApplication" />
++      <item itemvalue="Application.pageFilmApp" />
++      <item itemvalue="Application.RechercheFilm" />
++      <item itemvalue="Application.TestConnexionBDD" />
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.replaceString" />
+-        <item itemvalue="Application.SQLPart" />
+-        <item itemvalue="Application.helloControllerApplication" />
++        <item itemvalue="Application.TestConnexionBDD" />
+       </list>
+     </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="21be14a5-ed77-411c-9f4f-a2a749a7abd9" name="Changes" comment="" />
+-      <created>1680592153550</created>
++      <changelist id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="" />
++      <created>1680792251978</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1680592153550</updated>
++      <updated>1680792251978</updated>
+     </task>
+-    <task id="LOCAL-00001" summary="add sql">
+-      <created>1680957416890</created>
++    <task id="LOCAL-00001" summary="Branche master. Code de base.">
++      <created>1680792637115</created>
+       <option name="number" value="00001" />
+       <option name="presentableId" value="LOCAL-00001" />
+       <option name="project" value="LOCAL" />
+-      <updated>1680957416890</updated>
++      <updated>1680792637115</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="ajout film dans bdd">
+-      <created>1681061937410</created>
++    <task id="LOCAL-00002" summary="Mise en place des constructeurs pour se connecter à une BDD mySQL.">
++      <created>1680870727050</created>
+       <option name="number" value="00002" />
+       <option name="presentableId" value="LOCAL-00002" />
+       <option name="project" value="LOCAL" />
+-      <updated>1681061937410</updated>
++      <updated>1680870727050</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="ajout film dans bdd">
+-      <created>1681062209241</created>
++    <task id="LOCAL-00003" summary="Classe base de données finalisée et tests fonctionnels réalisés.">
++      <created>1680897021587</created>
+       <option name="number" value="00003" />
+       <option name="presentableId" value="LOCAL-00003" />
+       <option name="project" value="LOCAL" />
+-      <updated>1681062209241</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="ajout fichiers manquants">
+-      <created>1681063213069</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1681063213069</updated>
++      <updated>1680897021587</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -179,28 +183,30 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/Recherche-film" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="add sql" />
+-    <MESSAGE value="ajout film dans bdd" />
+-    <MESSAGE value="ajout fichier manquants" />
+-    <MESSAGE value="ajout fichiers manquants" />
+-    <option name="LAST_COMMIT_MESSAGE" value="ajout fichiers manquants" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+-          <option name="timeStamp" value="1" />
+-        </breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="Branche master. Code de base." />
++    <MESSAGE value="Mise en place de la classe Connexion_BDD et ajout du fichier SQL de la base de données des films." />
++    <MESSAGE value="Mise en place des constructeurs pour se connecter à une BDD mySQL." />
++    <MESSAGE value="Classe base de données finalisée et tests fonctionnels réalisés." />
++    <option name="LAST_COMMIT_MESSAGE" value="Classe base de données finalisée et tests fonctionnels réalisés." />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.example</groupId>\r\n    <artifactId>testJavaFX</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>testJavaFX</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <junit.version>5.9.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>com.mysql</groupId>\r\n            <artifactId>mysql-connector-j</artifactId>\r\n            <version>8.0.32</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-fxml</artifactId>\r\n            <version>19.0.2.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-media</artifactId>\r\n            <version>19.0.2.1</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.10.1</version>\r\n                <configuration>\r\n                    <source>19</source>\r\n                    <target>19</target>\r\n                </configuration>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.openjfx</groupId>\r\n                <artifactId>javafx-maven-plugin</artifactId>\r\n                <version>0.0.8</version>\r\n                <executions>\r\n                    <execution>\r\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\r\n                        <id>default-cli</id>\r\n                        <configuration>\r\n                            <mainClass>com.example.testjavafx/com.example.testjavafx.HelloApplication</mainClass>\r\n                            <launcher>app</launcher>\r\n                            <jlinkZipName>app</jlinkZipName>\r\n                            <jlinkImageName>app</jlinkImageName>\r\n                            <noManPages>true</noManPages>\r\n                            <stripDebug>true</stripDebug>\r\n                            <noHeaderFiles>true</noHeaderFiles>\r\n                        </configuration>\r\n                    </execution>\r\n                </executions>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ b/pom.xml	(date 1681320533863)
+@@ -5,16 +5,39 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <groupId>com.example</groupId>
+-    <artifactId>testJavaFX</artifactId>
++    <artifactId>rechercheFilm</artifactId>
+     <version>1.0-SNAPSHOT</version>
+-    <name>testJavaFX</name>
++    <name>rechercheFilm</name>
+ 
+     <properties>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+-        <junit.version>5.9.2</junit.version>
++        <junit.version>5.9.1</junit.version>
+     </properties>
+ 
+     <dependencies>
++        <dependency>
++            <groupId>org.openjfx</groupId>
++            <artifactId>javafx-controls</artifactId>
++            <version>19</version>
++        </dependency>
++        <dependency>
++            <groupId>org.openjfx</groupId>
++            <artifactId>javafx-fxml</artifactId>
++            <version>19</version>
++        </dependency>
++
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-api</artifactId>
++            <version>${junit.version}</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-engine</artifactId>
++            <version>${junit.version}</version>
++            <scope>test</scope>
++        </dependency>
+         <dependency>
+             <groupId>com.mysql</groupId>
+             <artifactId>mysql-connector-j</artifactId>
+@@ -22,12 +45,12 @@
+         </dependency>
+         <dependency>
+             <groupId>org.openjfx</groupId>
+-            <artifactId>javafx-fxml</artifactId>
++            <artifactId>javafx-media</artifactId>
+             <version>19.0.2.1</version>
+         </dependency>
+         <dependency>
+             <groupId>org.openjfx</groupId>
+-            <artifactId>javafx-media</artifactId>
++            <artifactId>javafx-web</artifactId>
+             <version>19.0.2.1</version>
+         </dependency>
+     </dependencies>
+@@ -52,7 +75,7 @@
+                         <!-- Default configuration for running with: mvn clean javafx:run -->
+                         <id>default-cli</id>
+                         <configuration>
+-                            <mainClass>com.example.testjavafx/com.example.testjavafx.HelloApplication</mainClass>
++                            <mainClass>com.example.recherchefilm/com.example.recherchefilm.HelloApplication</mainClass>
+                             <launcher>app</launcher>
+                             <jlinkZipName>app</jlinkZipName>
+                             <jlinkImageName>app</jlinkImageName>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"temurin-19\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2a4ec5b40a886a8b94efe8a5da8e94931622e11a)
++++ b/.idea/misc.xml	(date 1681320533996)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="temurin-19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
