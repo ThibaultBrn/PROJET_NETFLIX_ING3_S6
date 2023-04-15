@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagefilm.pageFilm">
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pageFilm.pageFilm">
    <content>
       <VBox id="virtualbox" fx:id="virtualbox" style="-fx-background-color: black;">
          <children>

@@ -5,7 +5,6 @@ module pageFilm {
     requires javafx.web;
     requires java.sql;
     requires java.desktop;
-    opens pagefilm to javafx.fxml;
-    exports pagefilm;
-
+    opens pageFilm to javafx.fxml;
+    exports pageFilm;
 }

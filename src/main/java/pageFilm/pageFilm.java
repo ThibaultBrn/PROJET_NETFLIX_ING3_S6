@@ -1,4 +1,4 @@
-package pagefilm;
+package pageFilm;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
