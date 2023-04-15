@@ -8,3 +8,5 @@ public class TestConnexionBDD {
         BDD1.requeteSQL("INSERT INTO films (Nom, Synopsis, Categories, LIEN) VALUES ('Fight Club', 'Combat secret', 'Action', 'ece.fr')");
     }
 }
+
+

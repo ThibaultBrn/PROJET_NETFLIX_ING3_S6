@@ -1,4 +1,4 @@
-package pagefilm;
+package pageFilm;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -36,8 +36,36 @@ public class pageFilm implements Initializable{
 
     public String nomFilm;
 
+    private final Button listeLecture = new Button();
+    boolean present = false;
+    String Pseudo = "Yassine";
+
     public void setNomFilm(String nNom) {
         nomFilm = nNom;
+    }
+
+    void majBouton()
+    {
+        try
+        {
+            BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
+            BDD_Projet_Netflix.requeteSQL("select NomFilm from listelecture WHERE Pseudo ='Yassine' AND NomFilm = '" + nomFilm + "'");
+            ResultSet resultatListe = BDD_Projet_Netflix.getResultat();
+
+            if (!resultatListe.next()) {
+                System.out.println("Le film n'est pas dans la liste");
+                listeLecture.setText("Ajouter à ma liste de lecture");
+                present = false;
+            } else {
+                System.out.println("Le film est dans la liste");
+                listeLecture.setText("Retirer de ma liste de lecture");
+                present = true;
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -148,14 +176,50 @@ public class pageFilm implements Initializable{
 
                         });
 
-                        lancerLecture.setOnMouseExited(e ->
+                        lancerLecture.setOnMouseExited(e -> lancerLecture.setStyle("-fx-border-color:purple;-fx-text-fill: purple;-fx-border-width: 2; -fx-background-color:black"));
+
+
+                        majBouton();
+
+                        listeLecture.setOnMouseClicked(e ->
                         {
-                            lancerLecture.setStyle("-fx-border-color:purple;-fx-text-fill: purple;-fx-border-width: 2; -fx-background-color:black");
+                            BaseDeDonnees base = new BaseDeDonnees("projet_netflix", "root", "");
+                            if(present)
+                            {
+                                base.requeteSQL("DELETE from listelecture WHERE Pseudo ='Yassine' AND NomFilm = '" + nomFilm + "'");
+                            }
+                            else
+                            {
+                                base.requeteSQL("INSERT INTO `listelecture` (`Pseudo`, `NomFilm`) VALUES ('"+Pseudo+"', '"+nomFilm+"')");
+                            }
+                            majBouton();
+
                         });
+
+                        listeLecture.setOnMouseEntered(e ->
+                        {
+                            listeLecture.setStyle("-fx-border-color:white;-fx-text-fill: white;-fx-border-width: 2; -fx-background-color:black");
+                            listeLecture.setCursor(Cursor.HAND);
+
+                        });
+
+                        listeLecture.setOnMouseExited(e -> listeLecture.setStyle("-fx-border-color:purple;-fx-text-fill: purple;-fx-border-width: 2; -fx-background-color:black"));
+
+
+
+                        listeLecture.setAlignment(Pos.CENTER);
+                        listeLecture.setTextFill(Color.WHITE);
+                        listeLecture.setStyle("-fx-border-color:purple; -fx-background-color:black;-fx-text-fill: purple;-fx-border-width: 2");
+                        listeLecture.setFont(new Font(40));
+                        listeLecture.setLayoutX(600);
+                        listeLecture.setLayoutY(40);
+
+
 
                         AnchorPane anchPane = new AnchorPane();
 
                         anchPane.getChildren().addAll(lancerLecture);
+                        anchPane.getChildren().addAll(listeLecture);
                         description.getChildren().addAll(anchPane);
 
 
