@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="ajout de identifiant et mot de passe avec scene builder">
+    <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="Ajout du bouton retour sur les deux fenetres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681584373987</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ajout du bouton retour sur les deux fenetres">
+      <created>1681590643716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681590643716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +200,8 @@
     <MESSAGE value="Classe base de données finalisée et tests fonctionnels réalisés." />
     <MESSAGE value="Ajout du log in sign in et menu qui demande si admin ou user" />
     <MESSAGE value="ajout de identifiant et mot de passe avec scene builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de identifiant et mot de passe avec scene builder" />
+    <MESSAGE value="Ajout du bouton retour sur les deux fenetres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du bouton retour sur les deux fenetres" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

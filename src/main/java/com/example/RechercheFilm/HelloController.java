@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -39,12 +40,26 @@ public class HelloController {
     @FXML
     public TextField identifiant=new TextField();
     public PasswordField mdp =new PasswordField();
+
+    public Label messageErreur=new Label();
     @FXML
     private void verification(ActionEvent event) throws IOException{
         String texte = identifiant.getText();
         System.out.println(texte);
         String texte2 = mdp.getText();
         System.out.println(texte2);
+
+        if(texte.equals("anatole")){
+            messageErreur.setText("Cet utilisateur existe déjà");
+        }
+        else if(texte.equals("alala")){
+            messageErreur.setText("Cet utilisateur n'existe pas");
+        }
+        else if(texte2.equals("123") && texte.equals("ala")){
+            messageErreur.setText("Mot de passe incorrecte");
+        }
+
+
     }
 
 
