@@ -52,6 +52,7 @@ public class ConnexionUtilisateur {
             else
             {
                 System.out.println("Choisissez un nombre entre 1 et 3");
+
             }
         }while(choixMenu != 3);
     }
@@ -105,12 +106,14 @@ public class ConnexionUtilisateur {
         }while (utilisateurAjoute == false);
     }
 
-    public void connexionAdmin()
+    public boolean connexionAdmin()
     {
         String pseudo;
-        System.out.println("Entrez votre pseudo :");
+        boolean adminValidation = false;
+        System.out.println("Entrez votre pseudo : ");
         pseudo = scanner.nextLine();
-        isAdministrateur(pseudo);
+        adminValidation=isAdministrateur(pseudo);
+        return adminValidation;
     }
 
     public boolean isAdministrateur(String pseudo)
