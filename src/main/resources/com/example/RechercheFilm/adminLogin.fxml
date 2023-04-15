@@ -38,5 +38,16 @@
             </Label>
          </children>
       </AnchorPane>
+      <Button contentDisplay="CENTER" layoutX="611.0" layoutY="350.0" minWidth="44.0" mnemonicParsing="false" onAction="#retour" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Retour" textFill="WHITE">
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+         <font>
+            <Font name="Calibri" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

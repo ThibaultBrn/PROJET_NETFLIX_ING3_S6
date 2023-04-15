@@ -46,4 +46,16 @@ public class HelloController {
         String texte2 = mdp.getText();
         System.out.println(texte2);
     }
+
+
+    @FXML
+    private void retour(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        currentStage.close();
+    }
 }
