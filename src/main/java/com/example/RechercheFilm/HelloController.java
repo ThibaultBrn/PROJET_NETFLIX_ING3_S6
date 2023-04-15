@@ -58,8 +58,6 @@ public class HelloController {
         else if(texte2.equals("123") && texte.equals("ala")){
             messageErreur.setText("Mot de passe incorrecte");
         }
-
-
     }
 
 
