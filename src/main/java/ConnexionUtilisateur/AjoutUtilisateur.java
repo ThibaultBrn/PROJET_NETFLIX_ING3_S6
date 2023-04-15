@@ -50,6 +50,5 @@ public class AjoutUtilisateur {
             System.out.println("Le pseudo selectionne existe deja, veuillez en choisir un nouveau");
             return false;
         }
-
     }
 }

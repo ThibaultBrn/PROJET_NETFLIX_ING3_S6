@@ -59,8 +59,40 @@ public class ConnexionUtilisateur {
     public void connexionUtilisateurSimple()
     {
         String pseudo;
-        System.out.println("Entrez votre pseudo :");
-        pseudo = scanner.nextLine();
+        String mdp;
+        boolean validation=false;
+
+        do {
+            System.out.println("Entrez votre pseudo :");
+            pseudo = scanner.nextLine();
+            System.out.println("Entrez votre mdp");
+            mdp=scanner.nextLine();
+            validation=this.verifPseudoMdp(pseudo,mdp);
+        }while(validation==false);
+
+    }
+    public boolean verifPseudoMdp(String _pseudo, String _mdp)
+    {
+
+        String mdpValable="";
+        BDD.requeteSQL("Select MotDePasse From utilisateur where pseudo = '"+_pseudo+"'");
+        ResultSet res= BDD.getResultat();
+        try
+        {
+            res.next();
+            mdpValable = res.getString("MotDePasse");
+        }catch (SQLException e){System.out.println("Impossible de recuperer le mdp");}
+        System.out.println("le mdp associé est : "+mdpValable);
+        if(_mdp.equals(mdpValable))
+        {
+            System.out.println("Mot de passe correcte");
+            return true;
+        }
+        else
+        {
+            System.out.println("Mot de passe incorrect");
+            return false;
+        }
     }
 
     public void ajouterUnUtilisateur()
@@ -71,7 +103,6 @@ public class ConnexionUtilisateur {
         do {
             utilisateurAjoute=ajout.ajouter();
         }while (utilisateurAjoute == false);
-
     }
 
     public void connexionAdmin()
