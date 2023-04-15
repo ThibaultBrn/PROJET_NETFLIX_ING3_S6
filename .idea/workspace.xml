@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="Premiers tests.">
+    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="Premier test de mise en place de la connexion admin.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681502373308</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Premier test de mise en place de la connexion admin.">
+      <created>1681503170069</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503170069</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,7 +160,8 @@
     <MESSAGE value="Mise en place des constructeurs pour se connecter à une BDD mySQL." />
     <MESSAGE value="Classe base de données finalisée et tests fonctionnels réalisés." />
     <MESSAGE value="Premiers tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Premiers tests." />
+    <MESSAGE value="Premier test de mise en place de la connexion admin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Premier test de mise en place de la connexion admin." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

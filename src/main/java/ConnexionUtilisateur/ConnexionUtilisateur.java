@@ -58,8 +58,11 @@ public class ConnexionUtilisateur {
         boolean isAdmin = false;
         BDD.requeteSQL("SELECT DroitsAdministrateur FROM utilisateur WHERE Pseudo = '" + pseudo + "';");
         res = BDD.getResultat();
+
         try{
+            res.next();
             isAdmin = res.getBoolean("DroitsAdministrateur");
+
         }catch(SQLException e){
             try{res.close();}catch (SQLException E){System.out.println("Impossible de fermer le registre de resultat dans la methode boolean isUtilisateur()");}
             System.out.println("Pseudo introuvable dans la base de donnees");
