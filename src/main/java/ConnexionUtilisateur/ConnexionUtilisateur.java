@@ -35,7 +35,7 @@ public class ConnexionUtilisateur {
                     }
                     else if (choixAjout==2)
                     {
-                        ajouterUnUtilisateur();
+                        //ajouterUnUtilisateur();
                     }
                     else
                     {
@@ -47,7 +47,7 @@ public class ConnexionUtilisateur {
             }
             else if(choixMenu == 2)
             {
-                connexionAdmin();
+
             }
             else
             {
@@ -96,23 +96,13 @@ public class ConnexionUtilisateur {
         }
     }
 
-    public void ajouterUnUtilisateur()
-    {
-        boolean utilisateurAjoute = false;
-        AjoutUtilisateur ajout = new AjoutUtilisateur();
 
-        do {
-            utilisateurAjoute=ajout.ajouter();
-        }while (utilisateurAjoute == false);
-    }
 
-    public boolean connexionAdmin()
+    public boolean connexionAdmin(String _pseudo)
     {
         String pseudo;
         boolean adminValidation = false;
-        System.out.println("Entrez votre pseudo : ");
-        pseudo = scanner.nextLine();
-        adminValidation=isAdministrateur(pseudo);
+        adminValidation=isAdministrateur(_pseudo);
         return adminValidation;
     }
 

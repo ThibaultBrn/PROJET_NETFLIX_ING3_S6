@@ -1,5 +1,6 @@
 package com.example.RechercheFilm;
 
+import ConnexionUtilisateur.ConnexionUtilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,14 +9,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
-
+import javafx.scene.control.TextField;
+import ConnexionUtilisateur.AjoutUtilisateur;
 import java.awt.*;
 import java.io.IOException;
 
 
 public class HelloController {
 
-    public PasswordField motDePasse = new PasswordField();
+    @FXML
+    public TextField identifiant ;
+    @FXML
+    public PasswordField motDePasse ;
+    @FXML
+    public TextField identifiantSI;
+    @FXML
+    public PasswordField mdpSI;
+    @FXML
+    public TextField identifiantUser;
+    @FXML
+    public TextField mdpUser;
+
     @FXML
     private void ouvrirUserLogin(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
@@ -38,11 +52,52 @@ public class HelloController {
         stage.show();
         currentStage.close();
     }
-    public TextField identifiant = new TextField();
+
     @FXML
-    private void verification(ActionEvent event) throws IOException
+    private void verificationAdmin(ActionEvent event) throws IOException
     {
-        String texteSaisie = identifiant.getText();
-        System.out.println("l'identifiant est : "+texteSaisie);
+        String PseudoSaisie = identifiant.getText();
+        String MdpSaisie = motDePasse.getText();
+        ConnexionUtilisateur conexAdmin = new ConnexionUtilisateur();
+        boolean verifAdmin = false;
+        boolean mdpValable = false;
+        verifAdmin = conexAdmin.connexionAdmin(PseudoSaisie);
+        do
+        {
+            mdpValable=conexAdmin.verifPseudoMdp(PseudoSaisie,MdpSaisie);
+            do
+            {
+                //ouvri la page administrateur
+            }while (mdpValable==false);
+        }while(verifAdmin==false);
+        System.out.println("connexion admin reussi");
+
+    }
+
+    @FXML
+    private void verificationUser(ActionEvent event) throws IOException
+    {
+        boolean auto = false;
+
+        ConnexionUtilisateur conexUser = new ConnexionUtilisateur();
+        while (auto==false) {
+            String pseudo = identifiantUser.getText();
+            String mdp = mdpUser.getText();
+            auto= conexUser.verifPseudoMdp(pseudo,mdp);
+
+        }
+        System.out.println("connexion utilisateur reussi");
+    }
+
+    @FXML
+    private void AjoutUser(ActionEvent evenet) throws IOException
+    {
+        AjoutUtilisateur ajout = new AjoutUtilisateur();
+        String pseudo = identifiantSI.getText();
+        String mdp = mdpSI.getText();
+        boolean test=false;
+        do {
+            test = ajout.ajouter(pseudo,mdp);
+        }while (test == false);
     }
 }

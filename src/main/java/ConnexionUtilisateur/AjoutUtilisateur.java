@@ -29,20 +29,16 @@ public class AjoutUtilisateur {
         }
         return exist;
     }
-    public boolean ajouter()
+    public boolean ajouter(String _pseudo,String _mdp)
     {
         String pseudo ="";
         String mdp = "";
         boolean test= false;
-        System.out.println("Saisir le nom d'utilisateur ");
-        pseudo= scanner.nextLine();
         test = testPseudo(pseudo);
         System.out.println("est ce que le pseudo existe ? : "+test);
         if(test==false)
         {
-            System.out.println("Saisir un mot de passe");
-            mdp = scanner.nextLine();
-            BDD2.requeteSQL("INSERT INTO utilisateur (Pseudo, MotDePasse, DroitsAdministrateur) VALUES ('"+pseudo+"', '"+mdp+"', '0')");
+            BDD2.requeteSQL("INSERT INTO utilisateur (Pseudo, MotDePasse, DroitsAdministrateur) VALUES ('"+_pseudo+"', '"+_mdp+"', '0')");
             return true;
         }
         else

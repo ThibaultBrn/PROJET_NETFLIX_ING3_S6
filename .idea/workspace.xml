@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="Verification lors de la saisie du mot de passe qu'il coincide avec le pseudo present dans la bdd">
+    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="test pour trouver l'erreur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681566739126</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test pour trouver l'erreur">
+      <created>1681584230797</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681584230797</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +237,8 @@
     <MESSAGE value="Connexion utilisateur reussi" />
     <MESSAGE value="Ajout d'un nouveau utilisateur effectué avec succes" />
     <MESSAGE value="Verification lors de la saisie du mot de passe qu'il coincide avec le pseudo present dans la bdd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verification lors de la saisie du mot de passe qu'il coincide avec le pseudo present dans la bdd" />
+    <MESSAGE value="test pour trouver l'erreur" />
+    <option name="LAST_COMMIT_MESSAGE" value="test pour trouver l'erreur" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
