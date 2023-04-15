@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,5 +34,16 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
         currentStage.close();
+    }
+
+    @FXML
+    public TextField identifiant=new TextField();
+    public PasswordField mdp =new PasswordField();
+    @FXML
+    private void verification(ActionEvent event) throws IOException{
+        String texte = identifiant.getText();
+        System.out.println(texte);
+        String texte2 = mdp.getText();
+        System.out.println(texte2);
     }
 }

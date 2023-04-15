@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RechercheFilm.HelloController">
    <children>
-      <TextField layoutX="417.0" layoutY="152.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
-      <PasswordField layoutX="417.0" layoutY="208.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
-      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="294.0" minWidth="44.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Login" textFill="WHITE">
+      <TextField fx:id="identifiant" layoutX="417.0" layoutY="152.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
+      <PasswordField fx:id="mdp" layoutX="417.0" layoutY="208.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
+      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="294.0" minWidth="44.0" mnemonicParsing="false" onAction="#verification" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Login" textFill="WHITE">
          <padding>
             <Insets bottom="10.0" />
          </padding>
