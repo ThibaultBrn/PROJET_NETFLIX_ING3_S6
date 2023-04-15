@@ -2,11 +2,13 @@ package ConnexionUtilisateur;
 
 import org.example.BaseDeDonnees;
 
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class AjoutUtilisateur {
+    public Label messageErreur=new Label();
     private BaseDeDonnees BDD2 ;
     private Scanner scanner = new Scanner(System.in);
     public AjoutUtilisateur()
@@ -31,11 +33,9 @@ public class AjoutUtilisateur {
     }
     public boolean ajouter(String _pseudo,String _mdp)
     {
-        String pseudo ="";
-        String mdp = "";
         boolean test= false;
-        test = testPseudo(pseudo);
-        System.out.println("est ce que le pseudo existe ? : "+test);
+        test = testPseudo(_pseudo);
+        System.out.println("le pseudo : "+_pseudo+" est "+test);
         if(test==false)
         {
             BDD2.requeteSQL("INSERT INTO utilisateur (Pseudo, MotDePasse, DroitsAdministrateur) VALUES ('"+_pseudo+"', '"+_mdp+"', '0')");
@@ -43,7 +43,7 @@ public class AjoutUtilisateur {
         }
         else
         {
-            System.out.println("Le pseudo selectionne existe deja, veuillez en choisir un nouveau");
+            messageErreur.setText("Le pseudo selectionne existe deja, veuillez en choisir un nouveau");
             return false;
         }
     }

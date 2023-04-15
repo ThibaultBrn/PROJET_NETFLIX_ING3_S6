@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="test pour trouver l'erreur">
+    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="mise en place d'ajout des utilisateur et des connexion depuis l'interface graphique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681584230797</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="mise en place d'ajout des utilisateur et des connexion depuis l'interface graphique">
+      <created>1681594024188</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681594024188</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +242,8 @@
     <MESSAGE value="Ajout d'un nouveau utilisateur effectué avec succes" />
     <MESSAGE value="Verification lors de la saisie du mot de passe qu'il coincide avec le pseudo present dans la bdd" />
     <MESSAGE value="test pour trouver l'erreur" />
-    <option name="LAST_COMMIT_MESSAGE" value="test pour trouver l'erreur" />
+    <MESSAGE value="mise en place d'ajout des utilisateur et des connexion depuis l'interface graphique" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise en place d'ajout des utilisateur et des connexion depuis l'interface graphique" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

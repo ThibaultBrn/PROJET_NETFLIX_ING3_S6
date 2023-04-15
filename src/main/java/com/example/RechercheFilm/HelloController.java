@@ -29,7 +29,7 @@ public class HelloController {
     public TextField identifiantUser;
     @FXML
     public TextField mdpUser;
-
+    public Label messageErreur=new Label();
     @FXML
     private void ouvrirUserLogin(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
@@ -62,16 +62,20 @@ public class HelloController {
         boolean verifAdmin = false;
         boolean mdpValable = false;
         verifAdmin = conexAdmin.connexionAdmin(PseudoSaisie);
-        do
+        if(verifAdmin==false)
+        {
+            messageErreur.setText("Vous n'etes pas administrateur");
+        }
+        else
         {
             mdpValable=conexAdmin.verifPseudoMdp(PseudoSaisie,MdpSaisie);
-            do
+            if(mdpValable==false)
             {
-                //ouvri la page administrateur
-            }while (mdpValable==false);
-        }while(verifAdmin==false);
-        System.out.println("connexion admin reussi");
-
+                messageErreur.setText("Mot de passe incorrect ");
+            }
+        }
+        identifiant.setText("");
+        motDePasse.setText("");
     }
 
     @FXML
@@ -80,13 +84,16 @@ public class HelloController {
         boolean auto = false;
 
         ConnexionUtilisateur conexUser = new ConnexionUtilisateur();
-        while (auto==false) {
-            String pseudo = identifiantUser.getText();
-            String mdp = mdpUser.getText();
-            auto= conexUser.verifPseudoMdp(pseudo,mdp);
 
+        String pseudo = identifiantUser.getText();
+        String mdp = mdpUser.getText();
+        auto= conexUser.verifPseudoMdp(pseudo,mdp);
+        if(auto == false)
+        {
+            messageErreur.setText("Mot de passe incorrect");
+            identifiantUser.setText("");
+            mdpUser.setText("");
         }
-        System.out.println("connexion utilisateur reussi");
     }
 
     @FXML
@@ -96,8 +103,8 @@ public class HelloController {
         String pseudo = identifiantSI.getText();
         String mdp = mdpSI.getText();
         boolean test=false;
-        do {
-            test = ajout.ajouter(pseudo,mdp);
-        }while (test == false);
+
+        test = ajout.ajouter(pseudo,mdp);
     }
+
 }
