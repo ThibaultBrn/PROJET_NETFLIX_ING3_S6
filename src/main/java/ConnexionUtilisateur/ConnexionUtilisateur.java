@@ -18,13 +18,32 @@ public class ConnexionUtilisateur {
     public void loginUtilisateur()
     {
         int choixMenu;
+        int choixAjout=0;
         do {
             System.out.println("1 : Se co en tant qu'utilisateur || 2 : Se co en tant qu'admin || 3 : Quitter");
             choixMenu = scanner.nextInt();
             scanner.nextLine();
             if(choixMenu == 1)
             {
-                connexionUtilisateurSimple();
+                do {
+                    System.out.println("1: Se connecter avec un compte existant || 2: Ajouter un compte || 3: Quitter");
+                    choixAjout=scanner.nextInt();
+                    scanner.nextLine();
+                    if(choixAjout==1)
+                    {
+                        connexionUtilisateurSimple();
+                    }
+                    else if (choixAjout==2)
+                    {
+                        ajouterUnUtilisateur();
+                    }
+                    else
+                    {
+                        System.out.println("Choisissez un nombre entre 1 et 3");
+                    }
+                }while(choixAjout !=3);
+
+
             }
             else if(choixMenu == 2)
             {
@@ -42,6 +61,17 @@ public class ConnexionUtilisateur {
         String pseudo;
         System.out.println("Entrez votre pseudo :");
         pseudo = scanner.nextLine();
+    }
+
+    public void ajouterUnUtilisateur()
+    {
+        boolean utilisateurAjoute = false;
+        AjoutUtilisateur ajout = new AjoutUtilisateur();
+
+        do {
+            utilisateurAjoute=ajout.ajouter();
+        }while (utilisateurAjoute == false);
+
     }
 
     public void connexionAdmin()
