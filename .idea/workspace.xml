@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd4f4df-95d6-4b51-adec-f5eb0a7ec673" name="Changes" comment="Ajout d'un nouveau utilisateur effectué avec succes">
+    <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
@@ -58,17 +61,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/anato/Desktop/PROJET_NETFLIX_ING3_S6123/src/main/resources/com/example/RechercheFilm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3862069"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.RechercheFilm" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
@@ -81,6 +90,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RechercheFilm" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RechercheFilm.rechercheApplication" />
+      <module name="Projet_NETFLIX" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Java\javafx-sdk-20\lib&quot; --add-modules javafx.controls,javafx.fxml " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,6 +117,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.RechercheFilm" />
       <item itemvalue="Application.TestConnexionBDD" />
     </list>
     <recent_temporary>
@@ -169,6 +187,29 @@
     <option name="localTasksCounter" value="8" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Recherche-film" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Branche master. Code de base." />
     <MESSAGE value="Mise en place de la classe Connexion_BDD et ajout du fichier SQL de la base de données des films." />
@@ -179,6 +220,9 @@
     <MESSAGE value="Connexion utilisateur reussi" />
     <MESSAGE value="Ajout d'un nouveau utilisateur effectué avec succes" />
     <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un nouveau utilisateur effectué avec succes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

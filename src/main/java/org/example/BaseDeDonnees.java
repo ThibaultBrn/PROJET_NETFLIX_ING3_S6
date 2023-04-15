@@ -48,8 +48,7 @@ public class BaseDeDonnees {
         }
     }
 
-    public ResultSet getResultat()
-    {
+    public ResultSet getResultat() {
         return resultat;
     }
 }

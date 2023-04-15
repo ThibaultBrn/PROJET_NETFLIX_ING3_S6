@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.RechercheFilm.rechercheFilm">
+    <VBox id="virtBox" fx:id="virtBox" alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0"
+          style="-fx-background-color: Black;">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+        <Label  style="-fx-text-fill: white;" text="RECHERCHER UN FILM" textFill="WHITE">
+            <font>
+                <Font name="Rockwell" size="40.0"/>
+            </font>
+        </Label>
+        <HBox alignment="CENTER">
+            <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                <HBox.margin>
+                    <Insets right="10.0"/>
+                </HBox.margin>
+                <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTYQQ7KKLlJHSwfZ9tPGaBmLoO0eN-pFUT5l0BR4H3Fx-RFUd3yrWLx0tDiyBpIRkQQo"/>
+            </ImageView>
+            <TextField id="SelectFilm" fx:id="SelectFilm" onKeyTyped="#rechercherFilm" onMouseClicked="#rechercherFilm"
+                       prefHeight="29.0" prefWidth="269.0"
+                       style="-fx-border-color: FireBrick; -fx-background-color: black; -fx-border-width: 2; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+</ScrollPane>
