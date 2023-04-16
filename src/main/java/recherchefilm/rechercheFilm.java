@@ -2,16 +2,12 @@ package recherchefilm;
 
 import example.BaseDeDonnees;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -24,7 +20,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.basic.BasicButtonUI;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -101,14 +96,7 @@ public class rechercheFilm implements Initializable {
 
         try
         {
-            String entreeUtilisateur = "0";
-            entreeUtilisateur = SelectFilm.getText();
-            try{
-                int entreeUtilisateurInt = Integer.parseInt(entreeUtilisateur);
-                BDD.requeteSQL("select * from films where NomFilm LIKE '%" + entreeUtilisateur + "%' OR NomRealisateur LIKE '%" + entreeUtilisateur + "%' OR PrenomRealisateur LIKE '%" + entreeUtilisateur + "%' OR Annee LIKE '" + entreeUtilisateurInt + "%'");
-            }catch(NumberFormatException e){
-                BDD.requeteSQL("select * from films where NomFilm LIKE '%" + entreeUtilisateur + "%' OR NomRealisateur LIKE '%" + entreeUtilisateur + "%' OR PrenomRealisateur LIKE '%" + entreeUtilisateur + "%'");
-            }
+            BDD.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText() + "%'");
             ResultSet rs = BDD.getResultat();
             if (rs != null) {
                 while (rs.next())

@@ -27,7 +27,7 @@ public class changerPage {
     }
 
     public static void ouvrirFilm(String nomFilm, String Pseudo) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageFilm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("pageFilm.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         Stage stage = new Stage();
@@ -60,7 +60,7 @@ public class changerPage {
     public static void retourMenu(ActionEvent event, String Pseudo) throws IOException {
 
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
-        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("pageAccueil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         Stage stage = new Stage();
@@ -75,7 +75,7 @@ public class changerPage {
     public static void retourMenu(MouseEvent event, String Pseudo) throws IOException {
 
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
-        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("pageAccueil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         Stage stage = new Stage();
@@ -86,4 +86,109 @@ public class changerPage {
         stage.show();
         currentStage.close();
     }
+
+    public static void ajoutFilm(MouseEvent event){
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ajoutFilm.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 320, 240);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+    }
+
+    public static void pageAdmin(ActionEvent event){
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("pageAdmin.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 320, 240);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+        currentStage.close();
+    }
+    public static void gestionUtilisateurs(MouseEvent event){
+
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("gestionUtilisateur.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 800, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public static void gestionCategories(MouseEvent event){
+
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(gestionCategorie.class.getResource("gestionCategorie.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 800, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public static void modifFilm(MouseEvent event){
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("modifFilm.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 800, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+    }
+
+    public static void gestionCategorie(MouseEvent event){
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("gestionCategorie.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 800, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }
