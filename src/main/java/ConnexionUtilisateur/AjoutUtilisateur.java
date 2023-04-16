@@ -36,14 +36,21 @@ public class AjoutUtilisateur {
         boolean test= false;
         test = testPseudo(_pseudo);
         System.out.println("le pseudo : "+_pseudo+" est "+test);
-        if(test==false)
+        if(_pseudo.equals("")==false)
         {
-            BDD2.requeteSQL("INSERT INTO utilisateur (Pseudo, MotDePasse, DroitsAdministrateur) VALUES ('"+_pseudo+"', '"+_mdp+"', '0')");
-            return true;
+            if(test==false)
+            {
+                BDD2.requeteSQL("INSERT INTO utilisateur (Pseudo, MotDePasse, DroitsAdministrateur) VALUES ('"+_pseudo+"', '"+_mdp+"', '0')");
+                return true;
+            }
+            else
+            {
+                messageErreur.setText("Le pseudo selectionne existe deja, veuillez en choisir un nouveau");
+                return false;
+            }
         }
         else
         {
-            messageErreur.setText("Le pseudo selectionne existe deja, veuillez en choisir un nouveau");
             return false;
         }
     }

@@ -15,6 +15,7 @@ import java.awt.*;
 import java.io.IOException;
 
 
+
 public class HelloController {
 
     @FXML
@@ -121,6 +122,18 @@ public class HelloController {
         boolean test=false;
 
         test = ajout.ajouter(pseudo,mdp);
+    }
+
+    @FXML
+    private void retourAcceuil(ActionEvent event) throws IOException
+    {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        currentStage.close();
     }
 
 }
