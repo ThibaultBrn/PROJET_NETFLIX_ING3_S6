@@ -286,7 +286,7 @@ public class pageAccueil implements Initializable {
                         Label nomCat = new Label();
                         nomCat.setText(cat);
                         nomCat.setFont(new Font(35));
-                        nomCat.setTextFill(Color.PURPLE);
+                        nomCat.setTextFill(Color.WHITE);
                         nomCat.setUnderline(true);
                         nomCat.setPadding(new Insets(40,0,10,0));
 

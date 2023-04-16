@@ -1,8 +1,11 @@
 package recherchefilm;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -252,4 +255,17 @@ public class pageFilm implements Initializable{
 
     }
 
+
+    @FXML
+    public void retourMenu(ActionEvent event) throws IOException {
+        webView.getEngine().load(null); // arrête la lecture de la vidéo
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("pageAccueil.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+        currentStage.close();
+    }
 }

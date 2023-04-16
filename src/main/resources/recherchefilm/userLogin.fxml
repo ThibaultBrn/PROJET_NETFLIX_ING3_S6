@@ -13,9 +13,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.HelloController">
    <children>
-      <TextField fx:id="identifiantUser" layoutX="417.0" layoutY="27.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
-      <PasswordField fx:id="mdpUser" layoutX="417.0" layoutY="83.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
-      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="140.0" minWidth="44.0" mnemonicParsing="false" onAction="#verificationUser" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Login" textFill="WHITE">
+      <TextField fx:id="identifiantUser" layoutX="417.0" layoutY="27.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: purple; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
+      <PasswordField fx:id="mdpUser" layoutX="417.0" layoutY="83.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: purple; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
+      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="140.0" minWidth="44.0" mnemonicParsing="false" onAction="#verificationUser" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: purple;" text="Login" textFill="WHITE">
          <padding>
             <Insets bottom="10.0" />
          </padding>
@@ -26,7 +26,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <AnchorPane prefHeight="400.0" prefWidth="338.0" style="-fx-background-color: #E50914;">
+      <AnchorPane prefHeight="400.0" prefWidth="338.0" style="-fx-background-color: purple;">
          <children>
             <Label layoutX="14.0" layoutY="157.0" text="NETFLIX" textFill="#f8f5f5">
                <font>
@@ -38,9 +38,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="identifiantSI" layoutX="417.0" layoutY="211.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
-      <PasswordField fx:id="mdpSI" layoutX="417.0" layoutY="267.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
-      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="324.0" minWidth="44.0" mnemonicParsing="false" onAction="#AjoutUser" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Sign in" textFill="WHITE">
+      <TextField fx:id="identifiantSI" layoutX="417.0" layoutY="211.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
+      <PasswordField fx:id="mdpSI" layoutX="417.0" layoutY="267.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
+      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="324.0" minWidth="44.0" mnemonicParsing="false" onAction="#AjoutUser" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: white;" text="Sign in" textFill="PURPLE">
          <padding>
             <Insets bottom="10.0" />
          </padding>
