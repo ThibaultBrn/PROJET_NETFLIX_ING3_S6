@@ -30,6 +30,8 @@ public class rechercheFilm implements Initializable {
 
     private BaseDeDonnees BDD;
 
+    private String Pseudo;
+
     int nbEntrees;
 
     @FXML
@@ -39,6 +41,11 @@ public class rechercheFilm implements Initializable {
     private VBox virtBox;
 
 
+    public void setPseudo(String pseudo)
+    {
+        Pseudo = pseudo;
+    }
+
     public void ouvrirFilm(String nomFilm) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageFilm.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
@@ -46,7 +53,7 @@ public class rechercheFilm implements Initializable {
         Stage stage = new Stage();
         pageFilm controller = fxmlLoader.getController();
         controller.setNomFilm(nomFilm);
-
+        controller.setPseudo(Pseudo);
 
         stage.setTitle(nomFilm);
         stage.setScene(scene);

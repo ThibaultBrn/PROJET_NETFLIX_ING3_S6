@@ -28,9 +28,11 @@ import example.*;
 public class pageAccueil implements Initializable {
 
 
-    String Pseudo = "Yassine";
+    private String Pseudo;
 
-
+    public void setPseudo(String pseudo){
+        Pseudo = pseudo;
+    }
     @FXML
     private VBox virtBox;
 
@@ -41,7 +43,7 @@ public class pageAccueil implements Initializable {
         Stage stage = new Stage();
         pageFilm controller = fxmlLoader.getController();
         controller.setNomFilm(nomFilm);
-
+        controller.setPseudo(Pseudo);
 
         stage.setTitle(nomFilm);
         stage.setScene(scene);

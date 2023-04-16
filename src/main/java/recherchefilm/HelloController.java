@@ -100,6 +100,7 @@ public class HelloController {
 
             Stage stage = new Stage();
             pageAccueil controller = fxmlLoader.getController();
+            controller.setPseudo(pseudo);
 
             stage.setTitle("Page d'accueil");
             stage.setScene(scene);
