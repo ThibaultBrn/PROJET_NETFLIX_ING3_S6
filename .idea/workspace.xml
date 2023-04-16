@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageFilm/pageFilm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageFilm/pageFilmApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/SQLPart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilmApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilmApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pageFilm/pageFilm.fxml" beforeDir="false" />
-    </list>
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Classe base de données finalisée et tests fonctionnels réalisés." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
