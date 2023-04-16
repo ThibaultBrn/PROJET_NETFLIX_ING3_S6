@@ -1,5 +1,6 @@
 package recherchefilm;
 
+import example.BaseDeDonnees;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,6 +27,8 @@ import java.util.ResourceBundle;
 
 public class rechercheFilm implements Initializable {
 
+
+    private BaseDeDonnees BDD;
 
     int nbEntrees;
 
@@ -54,7 +57,8 @@ public class rechercheFilm implements Initializable {
     @FXML
     public void rechercherFilm()
     {
-        SQLPart.connectionSQL();
+        BDD = new BaseDeDonnees("projet_netflix", "root", "");
+
         System.out.println("Barre de recherche: " + SelectFilm.getText());
 
 
@@ -73,7 +77,8 @@ public class rechercheFilm implements Initializable {
 
         try
         {
-            ResultSet rs = SQLPart.recupererData(SelectFilm.getText());
+            BDD.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText() + "%'");
+            ResultSet rs = BDD.getResultat();
             if (rs != null) {
                 while (rs.next())
                 {

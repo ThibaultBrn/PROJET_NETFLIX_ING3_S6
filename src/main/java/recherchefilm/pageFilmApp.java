@@ -24,7 +24,7 @@ public class pageFilmApp extends Application {
         controller.setNomFilm(nomFilm);
 
 
-        stage.setTitle("Hello!");
+        stage.setTitle("Netflix");
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
