@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Correction retour dans le menu depuis une page de film">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheApplication.java" beforeDir="false" />
-    </list>
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Correction retour dans le menu depuis une page de film" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,13 +20,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="reparationConnexionUtilisateur" />
+        <entry key="$PROJECT_DIR$" value="pageAdmin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/recherchefilm/pageFilmApp.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
