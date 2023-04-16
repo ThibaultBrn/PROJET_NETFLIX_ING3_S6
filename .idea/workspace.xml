@@ -119,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681612719422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout du bouton Log out sur la page d'accueil">
+      <created>1681641519982</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681641519982</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,7 +145,8 @@
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif." />
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
+    <MESSAGE value="Ajout du bouton Log out sur la page d'accueil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du bouton Log out sur la page d'accueil" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
