@@ -1,0 +1,468 @@
+Index: src/main/java/org/example/BaseDeDonnees.java
+===================================================================
+diff --git a/src/main/java/org/example/BaseDeDonnees.java b/src/main/java/org/example/BaseDeDonnees.java
+deleted file mode 100644
+--- a/src/main/java/org/example/BaseDeDonnees.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,53 +0,0 @@
+-package org.example;
+-
+-import java.sql.*;
+-
+-public class BaseDeDonnees {
+-
+-    private String nomDeLaBDD;
+-    private Connection connexionALaBaseDeDonnees;
+-    private Statement stmt = null;
+-    private ResultSet resultat = null;
+-
+-    public BaseDeDonnees(String _nomDeLaBDD, String login, String mdp) {
+-        nomDeLaBDD = _nomDeLaBDD;
+-        try {
+-            Class.forName("com.mysql.cj.jdbc.Driver");
+-        } catch (ClassNotFoundException CNFE) {
+-            System.out.println("Impossible de charger la classe com.mysql.cj.jdbc.Driver ce qui rend impossible la connexion à mysql.");
+-        }
+-        /**
+-         * ON SE CONNECTE A LA BASE DE DONNEES OU NOS FILMS SONT REPERTORIES
+-         * */
+-        try {
+-            connexionALaBaseDeDonnees = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + _nomDeLaBDD, login, mdp);
+-            System.out.println("Connexion correctement établie avec la base de données " + _nomDeLaBDD);
+-        } catch (SQLException SQLE) {
+-            System.out.println("Erreur rencontrée au moment d'établir la connextion avec la base de données " + _nomDeLaBDD);
+-        }
+-        /**
+-         * ON CREE UN STATEMENT AFIN DE POUVOIR RECUPERER DES REQUETES
+-         * */
+-        try {
+-            stmt = connexionALaBaseDeDonnees.createStatement();
+-        } catch (SQLException SQLE) {
+-            System.out.println("Echec lors de la création d'un objet de type statement pour la BDD " + nomDeLaBDD);
+-        }
+-    }
+-
+-    public void requeteSQL(String requete) {
+-        try {
+-            if (stmt.execute(requete)) {
+-                resultat = stmt.getResultSet();
+-            }
+-            System.out.println("La requete " + requete + "a été exéctuée avec succès pour la BDD " + nomDeLaBDD);
+-        } catch (SQLException SQLE) {
+-            System.out.println("Echec lors de l'execution de la requete " + requete + "pour la BDD " + nomDeLaBDD);
+-        }
+-    }
+-
+-    public ResultSet getResultat() {
+-        return resultat;
+-    }
+-}
+-
+Index: src/main/java/org/example/Main.java
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+deleted file mode 100644
+--- a/src/main/java/org/example/Main.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,8 +0,0 @@
+-package org.example;
+-
+-public class Main {
+-    public static void main(String[] args)
+-    {
+-        System.out.println("Hello world!");
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/TestPackage/TestConnexionBDD.java
+===================================================================
+diff --git a/src/main/java/TestPackage/TestConnexionBDD.java b/src/main/java/TestPackage/TestConnexionBDD.java
+deleted file mode 100644
+--- a/src/main/java/TestPackage/TestConnexionBDD.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,10 +0,0 @@
+-package TestPackage;
+-import org.example.BaseDeDonnees;
+-
+-public class TestConnexionBDD {
+-    public static void main(String[] args)
+-    {
+-        BaseDeDonnees BDD1 = new BaseDeDonnees("projet_netflix", "root", "");
+-        BDD1.requeteSQL("INSERT INTO films (Nom, Synopsis, Categories, LIEN) VALUES ('Fight Club', 'Combat secret', 'Action', 'ece.fr')");
+-    }
+-}
+Index: src/main/java/com/example/RechercheFilm/rechercheApplication.java
+===================================================================
+diff --git a/src/main/java/com/example/RechercheFilm/rechercheApplication.java b/src/main/java/com/example/RechercheFilm/rechercheApplication.java
+deleted file mode 100644
+--- a/src/main/java/com/example/RechercheFilm/rechercheApplication.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,25 +0,0 @@
+-package com.example.RechercheFilm;
+-
+-import org.example.*;
+-
+-import javafx.application.Application;
+-import javafx.fxml.FXMLLoader;
+-import javafx.scene.Scene;
+-import javafx.stage.Stage;
+-import java.io.IOException;
+-
+-public class rechercheApplication extends Application {
+-    @Override
+-    public void start(Stage stage) throws IOException {
+-        FXMLLoader fxmlLoader = new FXMLLoader(rechercheApplication.class.getResource("rechercheFilm.fxml"));
+-
+-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+-        stage.setTitle("Hello!");
+-        stage.setScene(scene);
+-        stage.show();
+-    }
+-
+-    public static void main(String[] args)  {
+-        launch();
+-    }
+-}
+Index: src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml b/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml
+deleted file mode 100644
+--- a/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,38 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ScrollPane?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.layout.VBox?>
+-<?import javafx.scene.text.Font?>
+-
+-<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;"
+-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+-            fx:controller="com.example.RechercheFilm.rechercheFilm">
+-    <VBox id="virtBox" fx:id="virtBox" alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0"
+-          style="-fx-background-color: Black;">
+-        <padding>
+-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+-        </padding>
+-        <Label  style="-fx-text-fill: white;" text="RECHERCHER UN FILM" textFill="WHITE">
+-            <font>
+-                <Font name="Rockwell" size="40.0"/>
+-            </font>
+-        </Label>
+-        <HBox alignment="CENTER">
+-            <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+-                <HBox.margin>
+-                    <Insets right="10.0"/>
+-                </HBox.margin>
+-                <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTYQQ7KKLlJHSwfZ9tPGaBmLoO0eN-pFUT5l0BR4H3Fx-RFUd3yrWLx0tDiyBpIRkQQo"/>
+-            </ImageView>
+-            <TextField id="SelectFilm" fx:id="SelectFilm" onKeyTyped="#rechercherFilm" onMouseClicked="#rechercherFilm"
+-                       prefHeight="29.0" prefWidth="269.0"
+-                       style="-fx-border-color: FireBrick; -fx-background-color: black; -fx-border-width: 2; -fx-text-fill: white;"/>
+-        </HBox>
+-    </VBox>
+-</ScrollPane>
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/module-info.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,8 +0,0 @@
+-module RechercheFilm {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-    requires java.sql;
+-    requires java.desktop;
+-    opens com.example.RechercheFilm to javafx.fxml;
+-    exports com.example.RechercheFilm;
+-}
+\ No newline at end of file
+Index: src/main/java/com/example/RechercheFilm/rechercheFilm.java
+===================================================================
+diff --git a/src/main/java/com/example/RechercheFilm/rechercheFilm.java b/src/main/java/com/example/RechercheFilm/rechercheFilm.java
+deleted file mode 100644
+--- a/src/main/java/com/example/RechercheFilm/rechercheFilm.java	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ /dev/null	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
+@@ -1,135 +0,0 @@
+-package com.example.RechercheFilm;
+-
+-import org.example.*;
+-
+-import javafx.fxml.FXML;
+-import javafx.geometry.Insets;
+-import javafx.geometry.Pos;
+-import javafx.scene.control.Label;
+-import javafx.scene.control.TextField;
+-import javafx.scene.image.Image;
+-import javafx.scene.image.ImageView;
+-import javafx.scene.layout.HBox;
+-import javafx.scene.layout.VBox;
+-import javafx.scene.paint.Color;
+-import javafx.scene.text.Font;
+-
+-import java.io.IOException;
+-import java.net.URI;
+-import java.net.URISyntaxException;
+-import java.sql.ResultSet;
+-import java.sql.SQLException;
+-
+-public class rechercheFilm {
+-
+-
+-    int nbEntrees;
+-
+-    @FXML
+-    private TextField SelectFilm;
+-
+-    @FXML
+-    private VBox virtBox;
+-
+-    @FXML
+-    public void rechercherFilm()
+-    {
+-        System.out.println("Barre de recherche: " + SelectFilm.getText());
+-
+-
+-        nbEntrees = SelectFilm.getText().length();
+-        System.out.println("Longueur" + nbEntrees);
+-
+-
+-        while(virtBox.getChildren().size() != 2)
+-        {
+-            if(virtBox.getChildren().size() > 2)
+-            {
+-                virtBox.getChildren().remove(2);
+-            }
+-        }
+-
+-
+-        try
+-        {
+-            BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
+-            BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText()+ "%'");
+-            ResultSet rs = BDD_Projet_Netflix.getResultat();
+-            if (rs != null) {
+-                while (rs.next())
+-                {
+-
+-                    HBox film = new HBox();
+-                    String lien = rs.getString("Lien");
+-                    film.setAlignment(Pos.CENTER_LEFT);
+-                    URI link = new URI(lien);
+-
+-                    film.setOnMouseClicked(e ->
+-                    {
+-                        try {
+-                            java.awt.Desktop.getDesktop().browse(link);
+-                        } catch (IOException ex) {
+-                            throw new RuntimeException(ex);
+-                        }
+-                    });
+-
+-
+-                    VBox.setMargin(film,new Insets(0,0,0,70));
+-
+-                    ImageView minia = new ImageView();
+-                    Image image = new Image(rs.getString("Miniature"));
+-
+-                    minia.setImage(image);
+-                    minia.setFitHeight(200);
+-                    minia.setFitWidth(150);
+-                    film.getChildren().addAll(minia);
+-                    //virtBox.getChildren().addAll(minia);
+-
+-
+-                    Label lab1 = new Label();
+-                    lab1.setText(rs.getString("NomFilm") +" ("+ rs.getString("Annee") +")");
+-                    lab1.setTextFill(Color.PURPLE);
+-                    lab1.setFont(new Font(30));
+-                    lab1.setUnderline(true);
+-
+-                    Label lab2 = new Label();
+-                    lab2.setText("Réalisateur : "+rs.getString("PrenomRealisateur") +" "+ rs.getString("NomRealisateur"));
+-                    lab2.setTextFill(Color.WHITE);
+-                    lab2.setFont(new Font(20));
+-
+-                    Label lab3 = new Label();
+-                    lab3.setText("Durée : "+ rs.getString("Duree") +" minutes");
+-                    lab3.setTextFill(Color.WHITE);
+-                    lab3.setFont(new Font(20));
+-
+-                    VBox description = new VBox();
+-                    description.getChildren().addAll(lab1);
+-                    description.getChildren().addAll(lab2);
+-                    description.getChildren().addAll(lab3);
+-                    VBox.setMargin(lab1,new Insets(0,0,0,30));
+-                    VBox.setMargin(lab2,new Insets(0,0,0,30));
+-                    VBox.setMargin(lab3,new Insets(0,0,0,30));
+-
+-                    film.getChildren().addAll(description);
+-                    //virtBox.getChildren().addAll(lab);
+-
+-                    virtBox.getChildren().addAll(film);
+-
+-
+-
+-
+-                    System.out.println("Nom Film: " + rs.getString("NomFilm"));
+-                    System.out.println("Duree Film: " + rs.getInt("Duree"));
+-                    System.out.println("Lien Film: " + rs.getString("Lien"));
+-                    System.out.println("Real Film: " + rs.getString("NomRealisateur") + " " + rs.getString("PrenomRealisateur"));
+-                    System.out.println("Annee Film: " + rs.getInt("Annee"));
+-                }
+-            }
+-        }
+-        catch (SQLException | URISyntaxException e)
+-        {
+-            System.out.println("Affichage films");
+-        }
+-
+-    }
+-}
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.example</groupId>\r\n    <artifactId>rechercheFilm</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>rechercheFilm</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <junit.version>5.9.1</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-controls</artifactId>\r\n            <version>19</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-fxml</artifactId>\r\n            <version>19</version>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.mysql</groupId>\r\n            <artifactId>mysql-connector-j</artifactId>\r\n            <version>8.0.32</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.10.1</version>\r\n                <configuration>\r\n                    <source>19</source>\r\n                    <target>19</target>\r\n                </configuration>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.openjfx</groupId>\r\n                <artifactId>javafx-maven-plugin</artifactId>\r\n                <version>0.0.8</version>\r\n                <executions>\r\n                    <execution>\r\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\r\n                        <id>default-cli</id>\r\n                        <configuration>\r\n                            <mainClass>com.example.recherchefilm/com.example.recherchefilm.HelloApplication</mainClass>\r\n                            <launcher>app</launcher>\r\n                            <jlinkZipName>app</jlinkZipName>\r\n                            <jlinkImageName>app</jlinkImageName>\r\n                            <noManPages>true</noManPages>\r\n                            <stripDebug>true</stripDebug>\r\n                            <noHeaderFiles>true</noHeaderFiles>\r\n                        </configuration>\r\n                    </execution>\r\n                </executions>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ b/pom.xml	(date 1681505970724)
+@@ -43,6 +43,11 @@
+             <artifactId>mysql-connector-j</artifactId>
+             <version>8.0.32</version>
+         </dependency>
++        <dependency>
++            <groupId>org.openjfx</groupId>
++            <artifactId>javafx-media</artifactId>
++            <version>19.0.2.1</version>
++        </dependency>
+     </dependencies>
+ 
+     <build>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/module-info.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheFilm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheFilm.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"module-info\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2O3bX0MrSiOPPCyVvZA2pphYmmg\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"com.example.RechercheFilm\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"openjdk-19\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\r\n      <module name=\"Projet_NETFLIX\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.example.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"RechercheFilm\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"RechercheFilm.rechercheApplication\" />\r\n      <module name=\"Projet_NETFLIX\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Java\\javafx-sdk-20\\lib&quot; --add-modules javafx.controls,javafx.fxml \" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestConnexionBDD\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TestPackage.TestConnexionBDD\" />\r\n      <module name=\"Projet_NETFLIX\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"TestPackage.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.RechercheFilm\" />\r\n      <item itemvalue=\"Application.TestConnexionBDD\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.TestConnexionBDD\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a\" name=\"Changes\" comment=\"\" />\r\n      <created>1680792251978</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1680792251978</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Branche master. Code de base.\">\r\n      <created>1680792637115</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680792637115</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Mise en place des constructeurs pour se connecter à une BDD mySQL.\">\r\n      <created>1680870727050</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680870727050</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Classe base de données finalisée et tests fonctionnels réalisés.\">\r\n      <created>1680897021587</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680897021587</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/Recherche-film\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Branche master. Code de base.\" />\r\n    <MESSAGE value=\"Mise en place de la classe Connexion_BDD et ajout du fichier SQL de la base de données des films.\" />\r\n    <MESSAGE value=\"Mise en place des constructeurs pour se connecter à une BDD mySQL.\" />\r\n    <MESSAGE value=\"Classe base de données finalisée et tests fonctionnels réalisés.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Classe base de données finalisée et tests fonctionnels réalisés.\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/testJavaFX$AjoutFilmApplication.ic\" NAME=\"AjoutFilmApplication Coverage Results\" MODIFIED=\"1681058658304\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ec2af21ac8e2a5a27d1b0f0ceda8baa50cc9f806)
++++ b/.idea/workspace.xml	(date 1681507369617)
+@@ -5,11 +5,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="8e1431e9-0ac1-4ed3-ab3e-216f1c89a29a" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheApplication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/RechercheFilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheFilm.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheApplication.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/RechercheFilm/rechercheFilm.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BaseDeDonnees.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/rechercheFilm.fxml" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,28 +53,34 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thibb/Desktop/Cours ECE/Ing3/Java/BRUN_PIRON_TP_27.03.2023/BRUN_PIRON&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "last_opened_file_path": "C:/Users/yassi/Desktop/ajoutFilm - Copie",
++    "project.structure.last.edited": "Libraries",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\yassi\Desktop\ajoutCategorie\src" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\yassi\Desktop\ajoutCategorie\src\java" />
++    </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="com.example.RechercheFilm" />
+     </key>
+   </component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Application.Main">
+     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+-      <module name="Projet_NETFLIX" />
++      <option name="MAIN_CLASS_NAME" value="com.example.testjavafx.AjoutFilmApplication" />
++      <module name="rechercheFilm" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="org.example.*" />
+@@ -98,6 +108,19 @@
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="ajoutCategorie" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="ajoutCategorie" />
++      <option name="filePath" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -110,6 +133,7 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.TestConnexionBDD" />
++        <item itemvalue="Application.TestConnexionBDD" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -157,7 +181,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="origin/Recherche-film" />
++                        <option value="origin/master" />
+                       </list>
+                     </value>
+                   </entry>
