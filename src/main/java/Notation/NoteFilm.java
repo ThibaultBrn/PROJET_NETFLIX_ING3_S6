@@ -7,54 +7,40 @@ import java.sql.SQLException;
 
 public class NoteFilm {
     private BaseDeDonnees BDD;
-    float moyenne;
-    int NBnote;
+    private float moyenne;
+    private int NBnote;
     public NoteFilm()
     {
         BDD = new BaseDeDonnees("projet_netflix", "root", "");
         moyenne = 0;
         NBnote = 0;
     }
-    public void AjouterNote()
+    public void AjouterNote(String filmANoter, double Note)
     {
-        float NewMoyenne=0;
-        float Note=3;
-        String filmANoter="Avatar";
+        double NewMoyenne=0;
         RecupNote(filmANoter);
-        NewMoyenne = (this.moyenne+(float)Note)/((float)this.NBnote+(float)1);
+        NewMoyenne = ((this.moyenne)*(this.NBnote)+Note)/((double)this.NBnote+(float)1);
         BDD.requeteSQL("Update films Set Moyenne = '"+NewMoyenne+"' where NomFilm = '"+filmANoter+"'");
+        BDD.requeteSQL("Update films set NbNote = '"+(this.NBnote+1)+"' where NomFilm = '"+filmANoter+"'");
     }
 
     public void RecupNote(String _film)
     {
         ResultSet res=null;
-        BDD.requeteSQL("Select Moyenne from films where NomFilm = '"+_film+"'");
-        res= BDD.getResultat();
-        try
-        {
-            res.next();
-        }catch (SQLException e){
-            System.out.println("Impossible d'effectuer res.next() pour la moyenne");
-        }
-        try
-        {
-            moyenne=res.getFloat("Moyenne");
-        }catch (SQLException ev){
-            System.out.println("Impossible d'effectuer res.getInt()");
-        }
-        BDD.requeteSQL("Select NbNote from films where NomFilm = '"+_film+"'");
+        BDD.requeteSQL("Select NbNote, Moyenne from films where NomFilm = '"+_film+"'");
         res=BDD.getResultat();
         try
         {
-            res.next();
+            while(res.next())
+            {
+                this.NBnote=res.getInt("NbNote");
+                this.moyenne=res.getFloat("Moyenne");
+            }
+
         }catch (SQLException e){
             System.out.println("Impossible d'effectuer res.next() pour la note");
         }
-        try
-        {
-            moyenne=res.getInt("NbNote");
-        }catch (SQLException ev){
-            System.out.println("Impossible d'effectuer res.getInt()");
-        }
+
+        System.out.println("la moyenne est : '"+this.moyenne+"' et le nombre de note est : '"+this.NBnote+"'");
     }
 }

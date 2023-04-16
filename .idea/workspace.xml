@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/adminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/adminLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageAccueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageAccueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/userLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/userLogin.fxml" afterDir="false" />
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet_netflix.sql" beforeDir="false" afterPath="$PROJECT_DIR$/projet_netflix.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +51,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/timot/Desktop/connexion_utilisateur"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/timot/Desktop/connexion_utilisateur&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
@@ -133,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681612719422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout de la notation du film effectuer avec la consol et sans graphismes">
+      <created>1681639309064</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681639309064</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,7 +147,8 @@
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif." />
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
+    <MESSAGE value="Ajout de la notation du film effectuer avec la consol et sans graphismes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la notation du film effectuer avec la consol et sans graphismes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

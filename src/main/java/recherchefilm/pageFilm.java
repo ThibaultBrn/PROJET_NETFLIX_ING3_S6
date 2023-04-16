@@ -1,5 +1,6 @@
 package recherchefilm;
 
+import Notation.NoteFilm;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -23,6 +25,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import example.BaseDeDonnees;
+import java.text.DecimalFormat;
 
 import java.io.IOException;
 import java.net.URI;
@@ -40,6 +43,7 @@ public class pageFilm implements Initializable{
     @FXML
     private VBox virtualbox;
 
+    public Slider monSlider;
     public String nomFilm;
 
     private final Button listeLecture = new Button();
@@ -147,14 +151,31 @@ public class pageFilm implements Initializable{
                     lab3.setTextFill(Color.WHITE);
                     lab3.setFont(new Font(15));
 
+                    Label lab4 = new Label();
+                    lab4.setText("Note : "+ rs.getFloat("Moyenne"));
+                    lab4.setTextFill(Color.WHITE);
+                    lab4.setFont(new Font(15));
+
                     VBox description = new VBox();
                     description.getChildren().addAll(lab1);
                     description.getChildren().addAll(lab2);
                     description.getChildren().addAll(lab3);
+                    description.getChildren().addAll(lab4);
+                    monSlider = new Slider(0,10,0);
+                    monSlider.setMaxWidth(100);
+                    monSlider.setMinWidth(100);
+                    monSlider.valueProperty().addListener(e->
+                    {
+                        NoteDuFilm();
+                    });
+                    description.getChildren().addAll(monSlider);
+
+
                     VBox.setMargin(lab1,new Insets(0,0,0,30));
                     VBox.setMargin(lab2,new Insets(0,0,0,30));
                     VBox.setMargin(lab3,new Insets(0,0,0,30));
-
+                    VBox.setMargin(lab4,new Insets(0,0,0,30));
+                    VBox.setMargin(monSlider,new Insets(0,0,0,30));
                     Label syno = new Label();
                     String synopsis = rs.getString("Synopsis");
 
@@ -253,6 +274,15 @@ public class pageFilm implements Initializable{
 
         });
 
+    }
+
+    public void NoteDuFilm(){
+        System.out.println("la fonction slider a ete effectué ");
+        NoteFilm newNote = new NoteFilm();
+        double note=0;
+        note = (monSlider.getValue());
+        double formatted_x = Math.round(note * 100.0) / 100.0;
+        newNote.AjouterNote(nomFilm,formatted_x);
     }
 
 
