@@ -95,19 +95,19 @@ public class HelloController {
         }
         else
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            FXMLLoader fxmlLoader2 = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+            Scene scene2 = new Scene(fxmlLoader2.load(), 320, 240);
 
-            Stage stage = new Stage();
-            pageAccueil controller = fxmlLoader.getController();
-            controller.setPseudo(pseudo);
+            Stage stage2 = new Stage();
+            pageAccueil controller2 = fxmlLoader2.getController();
+            controller2.setPseudo(pseudo);
 
-            stage.setTitle("Page d'accueil");
-            stage.setScene(scene);
-            stage.setMaximized(true);
-            Stage stage2 = (Stage)((Node) event.getSource()).getScene().getWindow();
-            stage2.close();
-            stage.show();
+            stage2.setTitle("Page d'accueil");
+            stage2.setScene(scene2);
+            stage2.setMaximized(true);
+            Stage stage3 = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage3.close();
+            stage2.show();
         }
     }
 

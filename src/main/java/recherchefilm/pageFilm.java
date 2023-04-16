@@ -21,6 +21,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import example.BaseDeDonnees;
 
+import java.awt.desktop.SystemEventListener;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -102,6 +103,7 @@ public class pageFilm implements Initializable{
             BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
             BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm ='" + nomFilm+ "'");
             ResultSet rs = BDD_Projet_Netflix.getResultat();
+
             if(rs!=null)
             {
                 try {
@@ -144,16 +146,40 @@ public class pageFilm implements Initializable{
                     lab3.setTextFill(Color.WHITE);
                     lab3.setFont(new Font(15));
 
+                    Label lab4 = new Label(); /**SERVIRA POUR LA PARTIE AFFICHAGE CASTING*/
+                    lab4.setTextFill(Color.WHITE);
+                    lab4.setFont(new Font(15));
+
+                    Label syno = new Label();
+                    String synopsis = rs.getString("Synopsis");
+
                     VBox description = new VBox();
                     description.getChildren().addAll(lab1);
                     description.getChildren().addAll(lab2);
                     description.getChildren().addAll(lab3);
+
+                    /**PARTIE AFFICHAGE CASTING*/
+                    rs.close();
+                    BDD_Projet_Netflix.requeteSQL("select * from casting where NomFilm = '" + nomFilm + "'");
+                    ResultSet rs2 = BDD_Projet_Netflix.getResultat();
+
+                    if(rs2 != null)
+                    {
+                        String casting = "Casting : ";
+                        while(rs2.next())
+                        {
+                            casting += rs2.getString("PrenomActeur") + " " + rs2.getString("NomActeur") + ", ";
+                            System.out.println("Nom : " + rs2.getString("NomActeur") + " Prenom acteur : " + rs2.getString("PrenomActeur"));
+                        }
+                        lab4.setText(casting);
+                        description.getChildren().addAll(lab4);
+                    }
+                    /**FIN PARTIE AFFICHAGE CASTING*/
+
                     VBox.setMargin(lab1,new Insets(0,0,0,30));
                     VBox.setMargin(lab2,new Insets(0,0,0,30));
                     VBox.setMargin(lab3,new Insets(0,0,0,30));
-
-                    Label syno = new Label();
-                    String synopsis = rs.getString("Synopsis");
+                    VBox.setMargin(lab4,new Insets(0,0,0,30));
 
                     syno.setText(synopsis);
                     syno.setFont(new Font(25));
@@ -241,7 +267,6 @@ public class pageFilm implements Initializable{
                     anchPane.getChildren().addAll(lancerLecture);
                     anchPane.getChildren().addAll(listeLecture);
                     description.getChildren().addAll(anchPane);
-
 
                 } catch (SQLException | URISyntaxException e) {
                     throw new RuntimeException(e);
