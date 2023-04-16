@@ -1,6 +1,4 @@
 module RechercheFilm {
-    requires org.kordamp.bootstrapfx.core;
-
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;

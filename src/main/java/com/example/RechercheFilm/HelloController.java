@@ -39,7 +39,6 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
         currentStage.close();
-
     }
 
     @FXML
@@ -93,6 +92,10 @@ public class HelloController {
             messageErreur.setText("Mot de passe incorrect");
             identifiantUser.setText("");
             mdpUser.setText("");
+        }
+        else
+        {
+
         }
     }
 

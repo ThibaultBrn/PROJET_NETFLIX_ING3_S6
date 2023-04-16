@@ -86,7 +86,7 @@ public class ConnexionUtilisateur {
         System.out.println("le mdp associé est : "+mdpValable);
         if(_mdp.equals(mdpValable))
         {
-            System.out.println("Mot de passe correcte");
+            System.out.println("Mot de passe correct");
             return true;
         }
         else
