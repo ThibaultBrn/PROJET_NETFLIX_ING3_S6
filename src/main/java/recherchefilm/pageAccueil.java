@@ -126,6 +126,7 @@ public class pageAccueil implements Initializable {
                             ImageView minia = new ImageView();
                             Image image = new Image(miniaFilm);
 
+
                             minia.setImage(image);
                             minia.setFitHeight(300);
                             minia.setFitWidth(200);
