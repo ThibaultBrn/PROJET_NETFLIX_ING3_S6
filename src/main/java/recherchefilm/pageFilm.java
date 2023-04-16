@@ -132,6 +132,29 @@ public class pageFilm implements Initializable {
             });
 
 
+            labelNetflix.setOnMouseClicked(e ->
+            {
+                try {
+                    webView.getEngine().load(null); // arrête la lecture de la vidéo
+                    changerPage.retourMenu(e, Pseudo);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            labelNetflix.setOnMouseEntered(e ->
+            {
+                labelNetflix.setStyle("-fx-background-color:rgba(200, 200, 200, 0.2)");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+
+            labelNetflix.setOnMouseExited(e ->
+            {
+                labelNetflix.setStyle("-fx-background-color: black");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+
+
             boutonDeco.setOnMouseClicked(e ->
             {
                 try {

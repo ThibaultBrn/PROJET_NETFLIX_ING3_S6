@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class NoteFilm {
-    private BaseDeDonnees BDD;
+    private final BaseDeDonnees BDD;
     private double moyenne;
     private int NBnote;
     public NoteFilm()
@@ -17,9 +17,8 @@ public class NoteFilm {
     }
     public void AjouterNote(String filmANoter, double Note)
     {
-        double NewMoyenne=0;
         RecupNote(filmANoter);
-        NewMoyenne = ((this.moyenne)*(this.NBnote)+Note)/((double)this.NBnote+(float)1);
+        double NewMoyenne = ((this.moyenne)*(this.NBnote)+Note)/((double)this.NBnote+(float)1);
         double formatted_newMoyenne = Math.round(NewMoyenne * 100.0) / 100.0;
         BDD.requeteSQL("Update films Set Moyenne = '"+formatted_newMoyenne+"' where NomFilm = '"+filmANoter+"'");
         BDD.requeteSQL("Update films set NbNote = '"+(this.NBnote+1)+"' where NomFilm = '"+filmANoter+"'");
@@ -27,9 +26,8 @@ public class NoteFilm {
 
     public void RecupNote(String _film)
     {
-        ResultSet res=null;
         BDD.requeteSQL("Select NbNote, Moyenne from films where NomFilm = '"+_film+"'");
-        res=BDD.getResultat();
+        ResultSet res=BDD.getResultat();
         int nombredenote = 0;
         double Moyennne=0;
         try
