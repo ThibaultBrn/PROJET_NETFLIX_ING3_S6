@@ -8,21 +8,51 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.Label?>
 <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.pageFilm">
    <content>
       <VBox id="virtualbox" fx:id="virtualbox" style="-fx-background-color: black;">
+         <HBox alignment="CENTER_LEFT" style="-fx-border-color: purple; -fx-border-width: 3;">
+            <children>
+               <AnchorPane prefHeight="81.0" prefWidth="1244.0">
+                  <children>
+                     <Label contentDisplay="CENTER" minWidth="178.0" prefHeight="88.0" prefWidth="646.0" style="-fx-text-fill: white; -fx-wrap-text: true;" text="Bonjour" fx:id="labelNom">
+                        <font>
+                           <Font name="Rockwell" size="30.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="775.0" layoutY="1.0" text="NETFLIX" textFill="WHITE" fx:id="labelNetflix">
+                        <font>
+                           <Font name="MS Gothic" size="82.0" />
+                        </font>
+                        <effect>
+                           <DropShadow blurType="ONE_PASS_BOX" height="52.45" offsetX="5.0" offsetY="2.0" radius="14.07" width="5.83">
+                              <color>
+                                 <Color red="0.501960813999176" blue="0.501960813999176" />
+                              </color>
+                           </DropShadow>
+                        </effect>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="611.0">
+                  <children>
+                     <Button mnemonicParsing="false" style="-fx-background-color: black;" text="DECONNEXION" textFill="WHITE" fx:id="boutonDeco">
+                        <font>
+                           <Font name="Rockwell" size="30.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </HBox>
          <children>
             <AnchorPane prefHeight="748.0" prefWidth="553.0" style="-fx-background-color: black;">
                <children>
                   <WebView id="webView" fx:id="webView" prefHeight="522.0" prefWidth="553.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button layoutX="492.0" layoutY="533.0" mnemonicParsing="false" onAction="#retourMenu" prefHeight="46.0" prefWidth="73.0" style="-fx-background-color: purple;" text="MENU" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="540.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="Futura-Medium" size="17.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
          </children>

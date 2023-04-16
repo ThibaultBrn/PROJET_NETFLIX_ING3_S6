@@ -1,6 +1,7 @@
 package recherchefilm;
 
 import example.BaseDeDonnees;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -21,6 +23,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -42,27 +46,16 @@ public class rechercheFilm implements Initializable {
     @FXML
     private VBox virtBox;
 
+    @FXML Label labelNom;
+    @FXML Button boutonDeco;
+    @FXML Label labelNetflix;
 
     public void setPseudo(String pseudo)
     {
         Pseudo = pseudo;
     }
 
-    public void ouvrirFilm(String nomFilm) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageFilm.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
-        Stage stage = new Stage();
-        pageFilm controller = fxmlLoader.getController();
-        controller.setNomFilm(nomFilm);
-        controller.setPseudo(Pseudo);
-
-        stage.setTitle(nomFilm);
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
-
-    }
     @FXML
     public void rechercherFilm()
     {
@@ -74,12 +67,34 @@ public class rechercheFilm implements Initializable {
         nbEntrees = SelectFilm.getText().length();
         System.out.println("Longueur" + nbEntrees);
 
+        labelNom.setText("Bonjour "+ Pseudo);
 
-        while(virtBox.getChildren().size() != 2)
+        boutonDeco.setOnMouseClicked(e->
         {
-            if(virtBox.getChildren().size() > 2)
+            try {
+                changerPage.retourLogin(e);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        boutonDeco.setOnMouseEntered(e->
+        {
+            boutonDeco.setStyle("-fx-text-fill: purple; -fx-background-color: black");
+            boutonDeco.setCursor(Cursor.HAND);
+        });
+        boutonDeco.setOnMouseExited(e->
+        {
+            boutonDeco.setStyle("-fx-text-fill: white; -fx-background-color: black");
+            boutonDeco.setCursor(Cursor.HAND);
+        });
+
+
+        while(virtBox.getChildren().size() != 3)
+        {
+            if(virtBox.getChildren().size() > 3)
             {
-                virtBox.getChildren().remove(2);
+                virtBox.getChildren().remove(3);
             }
         }
 
@@ -101,7 +116,7 @@ public class rechercheFilm implements Initializable {
                     film.setOnMouseClicked(e ->
                     {
                         try {
-                            ouvrirFilm(nomFilm);
+                            changerPage.ouvrirFilm(nomFilm,Pseudo);
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }
@@ -197,7 +212,30 @@ public class rechercheFilm implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        rechercherFilm();
+        Platform.runLater(() ->
+        {
+            labelNetflix.setOnMouseClicked(e->
+            {
+                try {
+                    changerPage.retourMenu(e,Pseudo);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            labelNetflix.setOnMouseEntered(e->
+            {
+                labelNetflix.setStyle("-fx-background-color:rgba(200, 200, 200, 0.2)");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+
+            labelNetflix.setOnMouseExited(e->
+            {
+                labelNetflix.setStyle("-fx-background-color: black");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+            rechercherFilm();
+        });
     }
 
 }

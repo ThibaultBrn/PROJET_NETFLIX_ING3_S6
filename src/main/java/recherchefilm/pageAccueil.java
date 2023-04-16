@@ -1,14 +1,14 @@
 package recherchefilm;
 
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -18,6 +18,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -36,25 +37,16 @@ public class pageAccueil implements Initializable {
         System.out.println("VOICI LE PSEUDO LORS DE L'AJOUT : " + Pseudo);
     }
 
-    @FXML
-    private VBox virtBox;
+    @FXML private VBox virtBox;
 
-    public void ouvrirFilm(String nomFilm) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageFilm.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+    @FXML private Label labelNom;
+    @FXML private Button boutonDeco;
+    @FXML TextField barreRecherche;
 
-        Stage stage = new Stage();
-        pageFilm controller = fxmlLoader.getController();
-        controller.setNomFilm(nomFilm);
-        System.out.println("VOICI LE PSEUDO AVANT PAGE FILM : " + Pseudo);
-        controller.setPseudo(Pseudo);
 
-        stage.setTitle(nomFilm);
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
 
-    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -65,6 +57,38 @@ public class pageAccueil implements Initializable {
             BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
             BDD_Projet_Netflix.requeteSQL("select NomFilm from listelecture WHERE Pseudo ='"+Pseudo+"'");
             System.out.println("VOICI LE PSEUDO : " + Pseudo);
+
+            labelNom.setText("Bonjour "+ Pseudo);
+
+            boutonDeco.setOnMouseClicked(e->
+            {
+                try {
+                    changerPage.retourLogin(e);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            boutonDeco.setOnMouseEntered(e->
+            {
+                boutonDeco.setStyle("-fx-text-fill: purple; -fx-background-color: black");
+                boutonDeco.setCursor(Cursor.HAND);
+            });
+            boutonDeco.setOnMouseExited(e->
+            {
+                boutonDeco.setStyle("-fx-text-fill: white; -fx-background-color: black");
+                boutonDeco.setCursor(Cursor.HAND);
+            });
+
+            barreRecherche.setOnMouseClicked(e->
+            {
+                try {
+                    changerPage.ouvrirRecherche(e,Pseudo);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
             ResultSet resultatListe = BDD_Projet_Netflix.getResultat();
             try
             {
@@ -75,7 +99,7 @@ public class pageAccueil implements Initializable {
                         Label nomCat = new Label();
                         nomCat.setText("Ma liste de lecture");
                         nomCat.setFont(new Font(35));
-                        nomCat.setTextFill(Color.WHITE);
+                        nomCat.setTextFill(Color.PURPLE);
                         nomCat.setUnderline(true);
                         nomCat.setPadding(new Insets(40,0,10,0));
                         virtBox.getChildren().addAll(nomCat);
@@ -155,7 +179,7 @@ public class pageAccueil implements Initializable {
                                 paneMinia.setOnMouseClicked(e ->
                                 {
                                     try {
-                                        ouvrirFilm(NomFilm);
+                                        changerPage.ouvrirFilm(NomFilm,Pseudo);
                                     } catch (IOException ex) {
                                         throw new RuntimeException(ex);
                                     }
@@ -241,7 +265,7 @@ public class pageAccueil implements Initializable {
                                     paneMinia.setOnMouseClicked(e ->
                                     {
                                         try {
-                                            ouvrirFilm(NomFilm);
+                                            changerPage.ouvrirFilm(NomFilm,Pseudo);
                                         } catch (IOException ex) {
                                             throw new RuntimeException(ex);
                                         }
@@ -374,7 +398,7 @@ public class pageAccueil implements Initializable {
                                             paneMinia.setOnMouseClicked(e ->
                                             {
                                                 try {
-                                                    ouvrirFilm(NomFilm);
+                                                    changerPage.ouvrirFilm(NomFilm,Pseudo);
                                                 } catch (IOException ex) {
                                                     throw new RuntimeException(ex);
                                                 }

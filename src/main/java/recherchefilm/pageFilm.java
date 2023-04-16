@@ -23,7 +23,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import example.BaseDeDonnees;
-
+import recherchefilm.changerPage.*;
 import java.awt.desktop.SystemEventListener;
 import java.io.IOException;
 import java.net.URI;
@@ -33,45 +33,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class pageFilm implements Initializable{
+public class pageFilm implements Initializable {
 
     @FXML
     private WebView webView;
 
     @FXML
     private VBox virtualbox;
-
+    @FXML
+    private Button boutonDeco;
+    @FXML
+    private Label labelNom;
+    @FXML
+    private Label labelNetflix;
     public String nomFilm;
 
     private final Button listeLecture = new Button();
     boolean present = false;
     private String Pseudo;
 
-    public void setPseudo(String pseudo)
-    {
+    public void setPseudo(String pseudo) {
         Pseudo = pseudo;
-    }
-    public void retourRecherche() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageAccueil.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-
-        Stage stage = new Stage();
-
-        stage.setTitle("pageRecherche");
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
-
     }
 
     public void setNomFilm(String nNom) {
         nomFilm = nNom;
     }
 
-    void majBouton()
-    {
-        try
-        {
+    void majBouton() {
+        try {
             BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
             BDD_Projet_Netflix.requeteSQL("select NomFilm from listelecture WHERE Pseudo = '" + Pseudo + "' AND NomFilm = '" + nomFilm + "'");
             ResultSet resultatListe = BDD_Projet_Netflix.getResultat();
@@ -85,9 +75,7 @@ public class pageFilm implements Initializable{
                 listeLecture.setText("Retirer de ma liste de lecture");
                 present = true;
             }
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -102,13 +90,56 @@ public class pageFilm implements Initializable{
             WebEngine engine = webView.getEngine();
 
 
+            labelNom.setText("Bonjour " + Pseudo);
+
+            labelNetflix.setOnMouseClicked(e ->
+            {
+                try {
+                    webView.getEngine().load(null); // arrête la lecture de la vidéo
+                    changerPage.retourMenu(e, Pseudo);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            labelNetflix.setOnMouseEntered(e ->
+            {
+                labelNetflix.setStyle("-fx-background-color:rgba(200, 200, 200, 0.2)");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+
+            labelNetflix.setOnMouseExited(e ->
+            {
+                labelNetflix.setStyle("-fx-background-color: black");
+                labelNetflix.setCursor(Cursor.HAND);
+            });
+
+
+            boutonDeco.setOnMouseClicked(e ->
+            {
+                try {
+                    changerPage.retourLogin(e);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+
+            boutonDeco.setOnMouseEntered(e ->
+            {
+                boutonDeco.setStyle("-fx-text-fill: purple; -fx-background-color: black");
+                boutonDeco.setCursor(Cursor.HAND);
+            });
+            boutonDeco.setOnMouseExited(e ->
+            {
+                boutonDeco.setStyle("-fx-text-fill: white; -fx-background-color: black");
+                boutonDeco.setCursor(Cursor.HAND);
+            });
 
             BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
-            BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm ='" + nomFilm+ "'");
+            BDD_Projet_Netflix.requeteSQL("select * from films where NomFilm ='" + nomFilm + "'");
             ResultSet rs = BDD_Projet_Netflix.getResultat();
 
-            if(rs!=null)
-            {
+            if (rs != null) {
                 try {
                     rs.next();
                     System.out.println("Nom" + rs.getString("NomFilm"));
@@ -117,11 +148,11 @@ public class pageFilm implements Initializable{
                     System.out.println("Duree" + rs.getString("Duree"));
 
                     String lien = rs.getString("Lien");
-                    lien = lien.replace("watch?v=","embed/");
+                    lien = lien.replace("watch?v=", "embed/");
                     System.out.println("Le lien:" + lien);
-                    engine.load(lien+"?autoplay=1&controls=0");
+                    engine.load(lien + "?autoplay=1&controls=0");
 
-                    URI link = new URI(lien+"?autoplay=1&controls=0");
+                    URI link = new URI(lien + "?autoplay=1&controls=0");
 
                     HBox infos = new HBox();
                     ImageView minia = new ImageView();
@@ -134,18 +165,18 @@ public class pageFilm implements Initializable{
 
 
                     Label lab1 = new Label();
-                    lab1.setText(rs.getString("NomFilm") +" ("+ rs.getString("Annee") +")");
+                    lab1.setText(rs.getString("NomFilm") + " (" + rs.getString("Annee") + ")");
                     lab1.setTextFill(Color.PURPLE);
                     lab1.setFont(new Font(50));
                     lab1.setUnderline(true);
 
                     Label lab2 = new Label();
-                    lab2.setText("Réalisateur : "+rs.getString("PrenomRealisateur") +" "+ rs.getString("NomRealisateur"));
+                    lab2.setText("Réalisateur : " + rs.getString("PrenomRealisateur") + " " + rs.getString("NomRealisateur"));
                     lab2.setTextFill(Color.WHITE);
                     lab2.setFont(new Font(15));
 
                     Label lab3 = new Label();
-                    lab3.setText("Durée : "+ rs.getString("Duree") +" minutes");
+                    lab3.setText("Durée : " + rs.getString("Duree") + " minutes");
                     lab3.setTextFill(Color.WHITE);
                     lab3.setFont(new Font(15));
 
@@ -166,11 +197,9 @@ public class pageFilm implements Initializable{
                     BDD_Projet_Netflix.requeteSQL("select * from casting where NomFilm = '" + nomFilm + "'");
                     ResultSet rs2 = BDD_Projet_Netflix.getResultat();
 
-                    if(rs2 != null)
-                    {
+                    if (rs2 != null) {
                         String casting = "Casting : ";
-                        while(rs2.next())
-                        {
+                        while (rs2.next()) {
                             casting += rs2.getString("PrenomActeur") + " " + rs2.getString("NomActeur") + ", ";
                             System.out.println("Nom : " + rs2.getString("NomActeur") + " Prenom acteur : " + rs2.getString("PrenomActeur"));
                         }
@@ -179,16 +208,16 @@ public class pageFilm implements Initializable{
                     }
                     /**FIN PARTIE AFFICHAGE CASTING*/
 
-                    VBox.setMargin(lab1,new Insets(0,0,0,30));
-                    VBox.setMargin(lab2,new Insets(0,0,0,30));
-                    VBox.setMargin(lab3,new Insets(0,0,0,30));
-                    VBox.setMargin(lab4,new Insets(0,0,0,30));
+                    VBox.setMargin(lab1, new Insets(0, 0, 0, 30));
+                    VBox.setMargin(lab2, new Insets(0, 0, 0, 30));
+                    VBox.setMargin(lab3, new Insets(0, 0, 0, 30));
+                    VBox.setMargin(lab4, new Insets(0, 0, 0, 30));
 
                     syno.setText(synopsis);
                     syno.setFont(new Font(25));
                     syno.setTextFill(Color.WHITE);
                     syno.setAlignment(Pos.CENTER_RIGHT);
-                    syno.setPadding(new Insets(40,80,0,80));
+                    syno.setPadding(new Insets(40, 120, 0, 80));
                     syno.setWrapText(true);
                     syno.setTextAlignment(TextAlignment.JUSTIFY);
 
@@ -233,13 +262,10 @@ public class pageFilm implements Initializable{
                     listeLecture.setOnMouseClicked(e ->
                     {
                         BaseDeDonnees base = new BaseDeDonnees("projet_netflix", "root", "");
-                        if(present)
-                        {
+                        if (present) {
                             base.requeteSQL("DELETE from listelecture WHERE Pseudo ='" + Pseudo + "' AND NomFilm = '" + nomFilm + "'");
-                        }
-                        else
-                        {
-                            base.requeteSQL("INSERT INTO `listelecture` (`Pseudo`, `NomFilm`) VALUES ('"+Pseudo+"', '"+nomFilm+"')");
+                        } else {
+                            base.requeteSQL("INSERT INTO `listelecture` (`Pseudo`, `NomFilm`) VALUES ('" + Pseudo + "', '" + nomFilm + "')");
                         }
                         majBouton();
 
@@ -255,14 +281,12 @@ public class pageFilm implements Initializable{
                     listeLecture.setOnMouseExited(e -> listeLecture.setStyle("-fx-border-color:purple;-fx-text-fill: purple;-fx-border-width: 2; -fx-background-color:black"));
 
 
-
                     listeLecture.setAlignment(Pos.CENTER);
                     listeLecture.setTextFill(Color.WHITE);
                     listeLecture.setStyle("-fx-border-color:purple; -fx-background-color:black;-fx-text-fill: purple;-fx-border-width: 2");
                     listeLecture.setFont(new Font(40));
                     listeLecture.setLayoutX(600);
                     listeLecture.setLayoutY(40);
-
 
 
                     AnchorPane anchPane = new AnchorPane();
@@ -279,6 +303,7 @@ public class pageFilm implements Initializable{
         });
 
     }
+}
 
 
 /*
@@ -297,20 +322,4 @@ public class pageFilm implements Initializable{
         stage.show();
 
     }*/
-    @FXML
-    public void retourMenu(ActionEvent event) throws IOException {
-        webView.getEngine().load(null); // arrête la lecture de la vidéo
 
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
-        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-
-        Stage stage = new Stage();
-        pageAccueil controller = fxmlLoader.getController();
-        controller.setPseudo(Pseudo);
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
-        currentStage.close();
-    }
-}

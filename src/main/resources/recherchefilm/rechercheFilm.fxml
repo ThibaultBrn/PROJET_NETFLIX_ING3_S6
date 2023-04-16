@@ -1,38 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;"
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="recherchefilm.rechercheFilm">
-   <VBox id="virtBox" fx:id="virtBox" alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0"
-         style="-fx-background-color: Black;">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.rechercheFilm">
+   <VBox id="virtBox" fx:id="virtBox" alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0" style="-fx-background-color: Black;">
       <padding>
-         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
-      <Label  style="-fx-text-fill: white;" text="RECHERCHER UN FILM" textFill="WHITE">
+      <HBox alignment="CENTER_LEFT" style="-fx-border-color: purple; -fx-border-width: 3;">
+         <children>
+            <AnchorPane prefHeight="81.0" prefWidth="1244.0">
+               <children>
+                  <Label fx:id="labelNom" contentDisplay="CENTER" minWidth="178.0" prefHeight="88.0" prefWidth="646.0" style="-fx-text-fill: white; -fx-wrap-text: true;" text="Bonjour">
+                     <font>
+                        <Font name="Rockwell" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="775.0" layoutY="1.0" text="NETFLIX" textFill="WHITE" fx:id="labelNetflix">
+                     <font>
+                        <Font name="MS Gothic" size="82.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="52.45" offsetX="5.0" offsetY="2.0" radius="14.07" width="5.83">
+                           <color>
+                              <Color red="0.501960813999176" blue="0.501960813999176" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="611.0">
+               <children>
+                  <Button fx:id="boutonDeco" mnemonicParsing="false" style="-fx-background-color: black;" text="DECONNEXION" textFill="WHITE">
+                     <font>
+                        <Font name="Rockwell" size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Label style="-fx-text-fill: white;" text="RECHERCHER UN FILM" textFill="WHITE">
          <font>
-            <Font name="Rockwell" size="40.0"/>
+            <Font name="Rockwell" size="40.0" />
          </font>
       </Label>
       <HBox alignment="CENTER">
          <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
             <HBox.margin>
-               <Insets right="10.0"/>
+               <Insets right="10.0" />
             </HBox.margin>
-            <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTYQQ7KKLlJHSwfZ9tPGaBmLoO0eN-pFUT5l0BR4H3Fx-RFUd3yrWLx0tDiyBpIRkQQo"/>
+            <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTYQQ7KKLlJHSwfZ9tPGaBmLoO0eN-pFUT5l0BR4H3Fx-RFUd3yrWLx0tDiyBpIRkQQo" />
          </ImageView>
-         <TextField id="SelectFilm" fx:id="SelectFilm" onKeyTyped="#rechercherFilm" onMouseClicked="#rechercherFilm"
-                    prefHeight="29.0" prefWidth="269.0"
-                    style="-fx-border-color: FireBrick; -fx-background-color: black; -fx-border-width: 2; -fx-text-fill: white;"/>
+         <TextField id="SelectFilm" fx:id="SelectFilm" minWidth="30.0" onKeyTyped="#rechercherFilm" onMouseClicked="#rechercherFilm" prefHeight="30.0" prefWidth="269.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-border-width: 2; -fx-text-fill: white;" />
       </HBox>
    </VBox>
 </ScrollPane>
