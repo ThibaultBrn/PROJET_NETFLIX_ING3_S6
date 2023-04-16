@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Correction retour dans le menu depuis une page de film" />
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Assemblage avec code Admin de Yassine en cours.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +134,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681648899061</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Assemblage de la connexion securisee de Timothee (avec retour a la page de connexion possible) avec le master.">
+      <created>1681676095529</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681676095529</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Assemblage avec code Admin de Yassine en cours.">
+      <created>1681676483805</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681676483805</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,7 +169,9 @@
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
     <MESSAGE value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
     <MESSAGE value="Correction retour dans le menu depuis une page de film" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction retour dans le menu depuis une page de film" />
+    <MESSAGE value="Assemblage de la connexion securisee de Timothee (avec retour a la page de connexion possible) avec le master." />
+    <MESSAGE value="Assemblage avec code Admin de Yassine en cours." />
+    <option name="LAST_COMMIT_MESSAGE" value="Assemblage avec code Admin de Yassine en cours." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
