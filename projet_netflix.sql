@@ -80,7 +80,6 @@ INSERT INTO `categorisation` (`NomFilm`, `Categorie`) VALUES
 ('', 'Aventure'),
 ('', 'Comédie'),
 ('', 'Drame'),
-('', 'Drame'),
 ('', 'Film Policier'),
 ('', 'Guerre'),
 ('', 'Horreur'),
