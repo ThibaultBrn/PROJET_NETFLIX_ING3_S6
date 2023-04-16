@@ -6,10 +6,9 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +18,9 @@ import java.util.ResourceBundle;
 
 public class modifFilm implements Initializable {
 
+    /**
+     * Récupération des zones de textes pour la saisie d'informations
+     */
     @FXML private TextField nomFilm;
     @FXML private TextField dureeFilm;
     @FXML private TextField lienFilm;
@@ -33,6 +35,7 @@ public class modifFilm implements Initializable {
     @FXML private ChoiceBox selectFilm;
 
 
+    /** BOuton lancant la modification des informations*/
     @FXML private Button boutonModif;
 
     protected void ajouterFilm(MouseEvent e)

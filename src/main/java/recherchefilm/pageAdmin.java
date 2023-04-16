@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
+
 public class pageAdmin implements Initializable {
 
     @FXML Button ajouterFilm;
