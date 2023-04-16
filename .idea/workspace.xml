@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Code final assemblé. Quelques warnings a regler.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notation/NoteFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_netflix.sql" beforeDir="false" afterPath="$PROJECT_DIR$/projet_netflix.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681676677522</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CODE FINAL ASSEMBLE.">
+      <created>1681677394413</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681677394413</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,7 +188,8 @@
     <MESSAGE value="Assemblage avec code Admin de Yassine en cours." />
     <MESSAGE value="Code final assemblé." />
     <MESSAGE value="Code final assemblé. Quelques warnings a regler." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code final assemblé. Quelques warnings a regler." />
+    <MESSAGE value="CODE FINAL ASSEMBLE." />
+    <option name="LAST_COMMIT_MESSAGE" value="CODE FINAL ASSEMBLE." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
