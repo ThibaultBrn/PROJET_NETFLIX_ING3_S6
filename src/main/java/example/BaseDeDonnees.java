@@ -41,8 +41,10 @@ public class BaseDeDonnees {
                 resultat = stmt.getResultSet();
             }
             System.out.println("La requete " + requete + "a été exéctuée avec succès pour la BDD " + nomDeLaBDD);
+
         } catch (SQLException SQLE) {
             System.out.println("Echec lors de l'execution de la requete " + requete + "pour la BDD " + nomDeLaBDD);
+            SQLE.printStackTrace();
         }
     }
 

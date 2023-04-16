@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RechercheFilm.pageFilm">
+   <content>
+      <VBox id="virtualbox" fx:id="virtualbox" style="-fx-background-color: black;">
+         <children>
+            <AnchorPane prefHeight="748.0" prefWidth="553.0" style="-fx-background-color: black;">
+               <children>
+                  <WebView id="webView" fx:id="webView" prefHeight="522.0" prefWidth="553.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

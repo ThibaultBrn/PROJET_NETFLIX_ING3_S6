@@ -16,6 +16,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import example.BaseDeDonnees;
 
 import java.io.IOException;
@@ -39,6 +40,18 @@ public class pageFilm implements Initializable{
     private final Button listeLecture = new Button();
     boolean present = false;
     String Pseudo = "Yassine";
+    public void retourRecherche() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageAccueil.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
+        Stage stage = new Stage();
+
+        stage.setTitle("pageRecherche");
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+
+    }
 
     public void setNomFilm(String nNom) {
         nomFilm = nNom;
