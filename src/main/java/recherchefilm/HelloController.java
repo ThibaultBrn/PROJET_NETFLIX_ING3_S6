@@ -37,6 +37,7 @@ public class HelloController {
         Parent root = FXMLLoader.load(getClass().getResource("userLogin.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
         currentStage.close();
     }

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="503504ba61130df1acda65dd19259ddc0414346d" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,13 +52,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/rechercheEtPage&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/yassi/Desktop/rechercheEtPage - Copie"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
@@ -64,8 +72,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="TestConnexionBDD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestPackage.TestConnexionBDD" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="recherchefilm.HelloApplication" />
       <module name="rechercheFilm" />
       <extension name="coverage">
         <pattern>
@@ -77,10 +85,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestConnexionBDD" />
-        <item itemvalue="Application.TestConnexionBDD" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

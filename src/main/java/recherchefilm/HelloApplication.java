@@ -14,6 +14,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 676, 400);
         stage.setTitle("Bienvenue sur Netflix!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

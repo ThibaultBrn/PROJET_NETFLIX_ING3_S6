@@ -97,7 +97,7 @@ public class pageAccueil implements Initializable {
 
 
                         String film1 = resultatListe.getString("NomFilm");
-                        System.out.println("Le fim :" + film1);
+                        //System.out.println("Le fim :" + film1);
 
 
                         BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
@@ -115,8 +115,8 @@ public class pageAccueil implements Initializable {
                                 String NomFilm = resultatTemp.getString("NomFilm");
                                 String miniaFilm = resultatTemp.getString("Miniature");
 
-                                System.out.println("Le fim la:" + NomFilm);
-                                System.out.println("Le lien la:" + miniaFilm);
+                                //System.out.println("Le fim la:" + NomFilm);
+                                //System.out.println("Le lien la:" + miniaFilm);
 
                                 StackPane paneMinia = new StackPane();
                                 paneMinia.setAlignment(Pos.CENTER);
@@ -184,7 +184,7 @@ public class pageAccueil implements Initializable {
                         while (resultatListe.next())
                         {
                             String film = resultatListe.getString("NomFilm");
-                            System.out.println("Le fim :" + film);
+                            //System.out.println("Le fim :" + film);
 
 
                             BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
@@ -202,8 +202,8 @@ public class pageAccueil implements Initializable {
                                     String NomFilm = resultat3.getString("NomFilm");
                                     String miniaFilm = resultat3.getString("Miniature");
 
-                                    System.out.println("Le fim la:" + NomFilm);
-                                    System.out.println("Le lien la:" + miniaFilm);
+                                    //System.out.println("Le fim la:" + NomFilm);
+                                    //System.out.println("Le lien la:" + miniaFilm);
 
                                     StackPane paneMinia = new StackPane();
                                     paneMinia.setAlignment(Pos.CENTER);
@@ -321,7 +321,7 @@ public class pageAccueil implements Initializable {
                                 while (resultat2.next())
                                 {
                                     String film = resultat2.getString("NomFilm");
-                                    System.out.println("Le fim :" + film);
+                                    //System.out.println("Le fim :" + film);
 
 
                                     BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
@@ -335,8 +335,8 @@ public class pageAccueil implements Initializable {
                                             String NomFilm = resultat3.getString("NomFilm");
                                             String miniaFilm = resultat3.getString("Miniature");
 
-                                            System.out.println("Le fim la:" + NomFilm);
-                                            System.out.println("Le lien la:" + miniaFilm);
+                                            //System.out.println("Le fim la:" + NomFilm);
+                                            //System.out.println("Le lien la:" + miniaFilm);
 
                                             StackPane paneMinia = new StackPane();
                                             paneMinia.setAlignment(Pos.CENTER);

@@ -281,13 +281,33 @@ public class pageFilm implements Initializable{
     }
 
 
+/*
+    public void ouvrirFilm(String nomFilm) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageFilm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
+        Stage stage = new Stage();
+        pageFilm controller = fxmlLoader.getController();
+        controller.setNomFilm(nomFilm);
+
+
+        stage.setTitle(nomFilm);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.show();
+
+    }*/
     @FXML
     public void retourMenu(ActionEvent event) throws IOException {
         webView.getEngine().load(null); // arrête la lecture de la vidéo
+
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("pageAccueil.fxml"));
-        Scene scene = new Scene(root);
+        pageAccueil controller = fxmlLoader.getController();
+        controller.setPseudo(Pseudo);
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
