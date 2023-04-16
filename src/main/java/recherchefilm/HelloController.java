@@ -1,4 +1,4 @@
-package com.example.RechercheFilm;
+package recherchefilm;
 
 import ConnexionUtilisateur.ConnexionUtilisateur;
 import javafx.event.ActionEvent;

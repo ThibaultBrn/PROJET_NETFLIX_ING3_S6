@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RechercheFilm.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.HelloController">
    <children>
       <Button contentDisplay="CENTER" layoutX="376.0" layoutY="164.0" minWidth="44.0" mnemonicParsing="false" onAction="#ouvrirUserLogin" prefHeight="72.0" prefWidth="116.0" style="-fx-background-color: #E50914;" text="User" textFill="WHITE">
          <padding>

@@ -1,4 +1,4 @@
-package com.example.RechercheFilm;
+package recherchefilm;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

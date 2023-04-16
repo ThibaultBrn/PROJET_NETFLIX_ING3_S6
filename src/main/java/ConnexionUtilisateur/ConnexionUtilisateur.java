@@ -1,6 +1,6 @@
 package ConnexionUtilisateur;
 
-import org.example.BaseDeDonnees;
+import example.BaseDeDonnees;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

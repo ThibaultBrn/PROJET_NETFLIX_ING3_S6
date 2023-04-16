@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Classe base de données finalisée et tests fonctionnels réalisés." />
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/AjoutUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnexionUtilisateur/ConnexionUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestPackage/TestConnexionBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/adminLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/adminLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/RechercheFilm/userLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/userLogin.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Recherche-film" />
+        <entry key="$PROJECT_DIR$" value="503504ba61130df1acda65dd19259ddc0414346d" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +72,7 @@
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thibb\Desktop\PROJET NETFLIX ING3 S6\Projet_NETFLIX\src\main\resources\recherchefilm" />
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
     </key>
   </component>
@@ -78,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestConnexionBDD" />
         <item itemvalue="Application.TestConnexionBDD" />
       </list>
     </recent_temporary>
@@ -123,7 +138,8 @@
     <MESSAGE value="Commit avant de merge pagefilm et rechercheetpage" />
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif." />
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
+    <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
