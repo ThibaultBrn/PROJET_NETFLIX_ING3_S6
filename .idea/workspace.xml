@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Correction retour dans le menu depuis une page de film">
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Creation de toutes les pages admin et lien avec Login Admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageAccueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageAccueil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/pageFilm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/recherchefilm/rechercheFilm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/recherchefilm/rechercheFilm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/AjoutFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/AjoutFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/changerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/changerPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/gestionUtilisateurApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/modifFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/modifFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/modifFilmApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAdminApp.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -32,9 +34,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/recherchefilm/pageFilmApp.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,23 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/yassi/Desktop/rechercheEtPage - Copie"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/ajoutPageAdmin - Copie&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yassi\Desktop\ajoutPageAdmin\src\main\resources\recherchefilm" />
+      <recent name="C:\Users\yassi\Desktop\ajoutPageAdmin\src\main\java\recherchefilm" />
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\java\recherchefilm" />
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources" />
-      <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\thibb\Desktop\PROJET NETFLIX ING3 S6\Projet_NETFLIX\src\main\resources\recherchefilm" />
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="recherchefilm" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,17 +85,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681648899061</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Creation de toutes les pages admin et lien avec Login Admin">
+      <created>1681670264261</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681670264262</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +168,8 @@
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
     <MESSAGE value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
     <MESSAGE value="Correction retour dans le menu depuis une page de film" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction retour dans le menu depuis une page de film" />
+    <MESSAGE value="Creation de toutes les pages admin et lien avec Login Admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation de toutes les pages admin et lien avec Login Admin" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

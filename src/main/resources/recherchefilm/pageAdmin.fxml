@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.pageAdmin">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="118.0" prefWidth="924.0" style="-fx-border-color: purple; -fx-border-width: 4;" text="PAGE ADMINISTRATEUR" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Rockwell Nova" size="68.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER" style="-fx-spacing: 40;">
+         <children>
+            <Button fx:id="ajouterFilm" mnemonicParsing="false" prefHeight="98.0" prefWidth="518.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-font-family: rockwell; -fx-text-fill: white; -fx-border-width: 3;" text="AJOUTER UN FILM">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Button>
+            <Button fx:id="modifierFilm" mnemonicParsing="false" prefHeight="98.0" prefWidth="518.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-font-family: rockwell; -fx-text-fill: white; -fx-border-width: 3;" text="MODIFIER UN FILM">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="80.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" style="-fx-spacing: 40;">
+         <children>
+            <Button fx:id="gestionCategories" mnemonicParsing="false" prefHeight="98.0" prefWidth="706.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-font-family: rockwell; -fx-text-fill: white; -fx-border-width: 3;" text="GESTION DES CATEGORIES">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="gestionUtilisateur" mnemonicParsing="false" prefHeight="98.0" prefWidth="640.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-font-family: rockwell; -fx-text-fill: white; -fx-border-width: 3;" text="GESTION UTILISATEURS">
+         <font>
+            <Font size="49.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="retour" mnemonicParsing="false" prefHeight="98.0" prefWidth="518.0" style="-fx-border-color: purple; -fx-background-color: black; -fx-font-family: rockwell; -fx-text-fill: white; -fx-border-width: 3;" text="RETOUR">
+         <font>
+            <Font size="49.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="150.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets top="50.0" />
+   </padding>
+</VBox>

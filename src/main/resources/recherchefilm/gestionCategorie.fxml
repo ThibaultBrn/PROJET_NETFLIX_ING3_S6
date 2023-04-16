@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.gestionCategorie">
+   <children>
+      <RadioButton fx:id="choixAjout" layoutX="95.0" layoutY="192.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="317.0" style="-fx-text-fill: white;" text="Ajouter une catégorie">
+         <toggleGroup>
+            <ToggleGroup fx:id="groupe" />
+         </toggleGroup>
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="choixSupprimer" layoutX="425.0" layoutY="192.0" mnemonicParsing="false" style="-fx-text-fill: white;" text="Supprimer une catégorie" toggleGroup="$groupe">
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font>
+      </RadioButton>
+      <Label contentDisplay="CENTER" layoutX="85.0" layoutY="31.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Gestion Catégories " textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="64.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPaneSupprimer" fitToHeight="true" fitToWidth="true" layoutX="22.0" layoutY="235.0" prefHeight="344.0" prefWidth="359.0" style="-fx-background-color: black;" visible="false">
+         <content>
+            <VBox fx:id="vBoxSupprimer" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: black; -fx-border-color: purple; -fx-border-width: 2;" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="boutonSupprimer" alignment="CENTER" layoutX="449.0" layoutY="363.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="291.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: purple; -fx-border-width: 3;" text="SUPPRIMER LA CATEGORIE" visible="false">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelPseudo" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="254.0" prefHeight="66.0" prefWidth="333.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Nom de la catégorie" textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pseudoUser" layoutX="414.0" layoutY="254.0" prefHeight="66.0" prefWidth="333.0" style="-fx-background-color: black; -fx-border-color: purple; -fx-border-width: 3; -fx-text-fill: white;">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </TextField>
+      <Button fx:id="boutonAjouter" alignment="CENTER" layoutX="250.0" layoutY="505.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="262.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: purple; -fx-border-width: 3;" text="Ajouter la catégore">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

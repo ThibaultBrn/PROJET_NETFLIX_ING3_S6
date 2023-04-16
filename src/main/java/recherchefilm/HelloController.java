@@ -73,6 +73,10 @@ public class HelloController {
             {
                 messageErreur.setText("Mot de passe incorrect ");
             }
+            else
+            {
+                changerPage.pageAdmin(event);
+            }
         }
         identifiant.setText("");
         motDePasse.setText("");
@@ -96,7 +100,7 @@ public class HelloController {
         }
         else
         {
-            FXMLLoader fxmlLoader2 = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+            FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("pageAccueil.fxml"));
             Scene scene2 = new Scene(fxmlLoader2.load(), 320, 240);
 
             Stage stage2 = new Stage();
