@@ -341,17 +341,6 @@ public class pageFilm implements Initializable {
         });
 
     }
-
-    public void NoteDuFilm(){
-        System.out.println("la fonction slider a ete effectué ");
-        NoteFilm newNote = new NoteFilm();
-        double note=0;
-        note = (monSlider.getValue());
-        double formatted_x = Math.round(note * 100.0) / 100.0;
-        newNote.AjouterNote(nomFilm,formatted_x);
-    }
-
-
     @FXML
     public void retourMenu(ActionEvent event) throws IOException {
         webView.getEngine().load(null); // arrête la lecture de la vidéo
@@ -363,5 +352,14 @@ public class pageFilm implements Initializable {
         stage.setMaximized(true);
         stage.show();
         currentStage.close();
+    }
+
+    public void NoteDuFilm(){
+        System.out.println("la fonction slider a ete effectué ");
+        NoteFilm newNote = new NoteFilm();
+        double note=0;
+        note = (monSlider.getValue());
+        double formatted_x = Math.round(note * 100.0) / 100.0;
+        newNote.AjouterNote(nomFilm,formatted_x);
     }
 }

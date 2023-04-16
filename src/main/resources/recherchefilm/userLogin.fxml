@@ -51,5 +51,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button layoutX="130.0" layoutY="296.0" mnemonicParsing="false" onAction="#retourAcceuil" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #302D2C;" text="Back" textFill="#fdfdfd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </Pane>
