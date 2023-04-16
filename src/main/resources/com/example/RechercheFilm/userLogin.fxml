@@ -62,5 +62,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="messageErreur" alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="9.0" prefHeight="17.0" prefWidth="297.0" textAlignment="CENTER" textFill="#e50914">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
