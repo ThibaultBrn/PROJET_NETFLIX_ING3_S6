@@ -122,5 +122,4 @@ public class HelloController {
 
         test = ajout.ajouter(pseudo,mdp);
     }
-
 }

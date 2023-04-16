@@ -74,7 +74,6 @@ public class ConnexionUtilisateur {
     }
     public boolean verifPseudoMdp(String _pseudo, String _mdp)
     {
-
         String mdpValable="";
         BDD.requeteSQL("Select MotDePasse From utilisateur where pseudo = '"+_pseudo+"'");
         ResultSet res= BDD.getResultat();

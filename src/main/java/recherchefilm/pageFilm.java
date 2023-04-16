@@ -213,7 +213,7 @@ public class pageFilm implements Initializable {
                     description.getChildren().addAll(lab1);
                     description.getChildren().addAll(lab2);
                     description.getChildren().addAll(lab3);
-                    description.getChildren().addAll(lab4);
+                    description.getChildren().addAll(lab5);
                     monSlider = new Slider(0,10,0);
                     monSlider.setMaxWidth(100);
                     monSlider.setMinWidth(100);
@@ -248,6 +248,8 @@ public class pageFilm implements Initializable {
                     VBox.setMargin(lab2, new Insets(0, 0, 0, 30));
                     VBox.setMargin(lab3, new Insets(0, 0, 0, 30));
                     VBox.setMargin(lab4, new Insets(0, 0, 0, 30));
+                    VBox.setMargin(lab5, new Insets(0, 0, 0, 30));
+                    VBox.setMargin(monSlider, new Insets(0, 0, 0, 30));
 
                     syno.setText(synopsis);
                     syno.setFont(new Font(25));
@@ -339,7 +341,6 @@ public class pageFilm implements Initializable {
         });
 
     }
-}
 
     public void NoteDuFilm(){
         System.out.println("la fonction slider a ete effectué ");
