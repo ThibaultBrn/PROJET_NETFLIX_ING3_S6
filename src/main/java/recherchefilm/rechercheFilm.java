@@ -86,7 +86,7 @@ public class rechercheFilm implements Initializable {
 
         try
         {
-            BDD.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText() + "%'");
+            BDD.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText() + "%' OR Realisateur LIKE '%" + SelectFilm.getText() + "%'");
             ResultSet rs = BDD.getResultat();
             if (rs != null) {
                 while (rs.next())

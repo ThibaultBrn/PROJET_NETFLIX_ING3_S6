@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Merge effectué avec le code d'Anatole (boutons retour et couleur violette sur toutes les pages).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/rechercheFilm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +47,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/yassi/Desktop/rechercheEtPage - Copie"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yassi/Desktop/rechercheEtPage&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yassi\Desktop\rechercheEtPage\src\main\resources\recherchefilm" />
@@ -72,8 +67,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="recherchefilm.HelloApplication" />
+    <configuration name="TestConnexionBDD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestPackage.TestConnexionBDD" />
       <module name="rechercheFilm" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +93,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestConnexionBDD" />
+        <item itemvalue="Application.TestConnexionBDD" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681645660747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge effectué avec le code d'Anatole (boutons retour et couleur violette sur toutes les pages).">
+      <created>1681645761687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681645761687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,7 +162,8 @@
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
     <MESSAGE value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
+    <MESSAGE value="Merge effectué avec le code d'Anatole (boutons retour et couleur violette sur toutes les pages)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge effectué avec le code d'Anatole (boutons retour et couleur violette sur toutes les pages)." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
