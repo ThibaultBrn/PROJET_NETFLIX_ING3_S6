@@ -86,7 +86,14 @@ public class rechercheFilm implements Initializable {
 
         try
         {
-            BDD.requeteSQL("select * from films where NomFilm LIKE '%" + SelectFilm.getText() + "%' OR Realisateur LIKE '%" + SelectFilm.getText() + "%'");
+            String entreeUtilisateur = "0";
+            entreeUtilisateur = SelectFilm.getText();
+            try{
+                int entreeUtilisateurInt = Integer.parseInt(entreeUtilisateur);
+                BDD.requeteSQL("select * from films where NomFilm LIKE '%" + entreeUtilisateur + "%' OR NomRealisateur LIKE '%" + entreeUtilisateur + "%' OR PrenomRealisateur LIKE '%" + entreeUtilisateur + "%' OR Annee LIKE '" + entreeUtilisateurInt + "%'");
+            }catch(NumberFormatException e){
+                BDD.requeteSQL("select * from films where NomFilm LIKE '%" + entreeUtilisateur + "%' OR NomRealisateur LIKE '%" + entreeUtilisateur + "%' OR PrenomRealisateur LIKE '%" + entreeUtilisateur + "%'");
+            }
             ResultSet rs = BDD.getResultat();
             if (rs != null) {
                 while (rs.next())
