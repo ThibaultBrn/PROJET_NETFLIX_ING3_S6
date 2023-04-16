@@ -1,5 +1,6 @@
 package recherchefilm;
 
+import ConnexionUtilisateur.AjoutUtilisateur;
 import ConnexionUtilisateur.ConnexionUtilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,9 +9,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
-import javafx.stage.Stage;
 import javafx.scene.control.TextField;
-import ConnexionUtilisateur.AjoutUtilisateur;
+import javafx.stage.Stage;
+
 import java.awt.*;
 import java.io.IOException;
 
@@ -73,6 +74,10 @@ public class HelloController {
             {
                 messageErreur.setText("Mot de passe incorrect ");
             }
+            else
+            {
+                changerPage.pageAdmin(event);
+            }
         }
         identifiant.setText("");
         motDePasse.setText("");
@@ -96,7 +101,7 @@ public class HelloController {
         }
         else
         {
-            FXMLLoader fxmlLoader2 = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+            FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("pageAccueil.fxml"));
             Scene scene2 = new Scene(fxmlLoader2.load(), 320, 240);
 
             Stage stage2 = new Stage();
@@ -122,4 +127,5 @@ public class HelloController {
 
         test = ajout.ajouter(pseudo,mdp);
     }
+
 }

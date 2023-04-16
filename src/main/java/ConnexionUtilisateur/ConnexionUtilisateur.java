@@ -4,7 +4,7 @@ import example.BaseDeDonnees;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.Scanner;
 
 public class ConnexionUtilisateur {
 
@@ -74,6 +74,7 @@ public class ConnexionUtilisateur {
     }
     public boolean verifPseudoMdp(String _pseudo, String _mdp)
     {
+
         String mdpValable="";
         BDD.requeteSQL("Select MotDePasse From utilisateur where pseudo = '"+_pseudo+"'");
         ResultSet res= BDD.getResultat();

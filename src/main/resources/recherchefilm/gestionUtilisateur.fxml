@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.gestionUtilisateur">
+   <children>
+      <RadioButton fx:id="choixAjout" layoutX="95.0" layoutY="192.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="317.0" style="-fx-text-fill: white;" text="Ajouter un utilisateur">
+         <toggleGroup>
+            <ToggleGroup fx:id="groupe" />
+         </toggleGroup>
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="choixSupprimer" layoutX="425.0" layoutY="192.0" mnemonicParsing="false" style="-fx-text-fill: white;" text="Supprimer un utilisateur" toggleGroup="$groupe">
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font>
+      </RadioButton>
+      <Label contentDisplay="CENTER" layoutX="85.0" layoutY="31.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Gestion Utilisateurs " textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="64.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPaneSupprimer" fitToHeight="true" fitToWidth="true" layoutX="22.0" layoutY="235.0" prefHeight="344.0" prefWidth="359.0" style="-fx-background-color: black;" visible="false">
+         <content>
+            <VBox fx:id="vBoxSupprimer" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: black; -fx-border-color: purple; -fx-border-width: 2;" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="boutonSupprimer" alignment="CENTER" layoutX="449.0" layoutY="363.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="262.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: purple; -fx-border-width: 3;" text="SUPPRIMER L'UTILISATEUR" visible="false">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelPseudo" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="254.0" prefHeight="66.0" prefWidth="333.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Pseudo Utilisateur" textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pseudoUser" layoutX="414.0" layoutY="254.0" prefHeight="66.0" prefWidth="333.0" style="-fx-background-color: black; -fx-border-color: purple; -fx-border-width: 3; -fx-text-fill: white;">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelMdp" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="330.0" prefHeight="66.0" prefWidth="333.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Mot De Passe" textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mdpUser" layoutX="414.0" layoutY="330.0" prefHeight="66.0" prefWidth="333.0" style="-fx-background-color: black; -fx-border-color: purple; -fx-border-width: 3; -fx-text-fill: white;">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelDroits" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="407.0" prefHeight="66.0" prefWidth="333.0" style="-fx-border-color: Purple; -fx-border-width: 3; -fx-label-padding: 10;" text="Droits" textFill="WHITE">
+         <font>
+            <Font name="Rockwell" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="boutonAjouter" alignment="CENTER" layoutX="250.0" layoutY="505.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="262.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-border-color: purple; -fx-border-width: 3;" text="AJOUTER L'UTILISATEUR">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="paneUser" layoutX="414.0" layoutY="407.0" prefHeight="66.0" prefWidth="333.0" style="-fx-border-color: purple; -fx-border-width: 3;">
+         <children>
+            <RadioButton fx:id="choixUser" layoutX="37.0" layoutY="20.0" mnemonicParsing="false" text="User" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell" size="20.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupeDroits" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="choixAdmin" layoutX="167.0" layoutY="20.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="115.0" text="Admin" textFill="WHITE" toggleGroup="$groupeDroits">
+               <font>
+                  <Font name="Rockwell" size="20.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

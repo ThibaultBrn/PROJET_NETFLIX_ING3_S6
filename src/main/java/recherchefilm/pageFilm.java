@@ -1,34 +1,25 @@
 package recherchefilm;
 
-import Notation.NoteFilm;
+import example.BaseDeDonnees;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import example.BaseDeDonnees;
-import recherchefilm.changerPage.*;
-import java.awt.desktop.SystemEventListener;
-import javax.swing.event.ChangeEvent;
-import java.text.DecimalFormat;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -50,7 +41,6 @@ public class pageFilm implements Initializable {
     private Label labelNom;
     @FXML
     private Label labelNetflix;
-    public Slider monSlider;
     public String nomFilm;
 
     private final Button listeLecture = new Button();
@@ -59,18 +49,6 @@ public class pageFilm implements Initializable {
 
     public void setPseudo(String pseudo) {
         Pseudo = pseudo;
-    }
-    public void retourRecherche() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageAccueil.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-
-        Stage stage = new Stage();
-
-        stage.setTitle("pageRecherche");
-        stage.setScene(scene);
-        stage.setMaximized(true);
-        stage.show();
-
     }
 
     public void setNomFilm(String nNom) {
@@ -201,11 +179,6 @@ public class pageFilm implements Initializable {
                     lab4.setTextFill(Color.WHITE);
                     lab4.setFont(new Font(15));
 
-                    Label lab5 = new Label();
-                    lab5.setText("Note : "+ rs.getFloat("Moyenne"));
-                    lab5.setTextFill(Color.WHITE);
-                    lab5.setFont(new Font(15));
-
                     Label syno = new Label();
                     String synopsis = rs.getString("Synopsis");
 
@@ -213,21 +186,7 @@ public class pageFilm implements Initializable {
                     description.getChildren().addAll(lab1);
                     description.getChildren().addAll(lab2);
                     description.getChildren().addAll(lab3);
-                    description.getChildren().addAll(lab5);
-                    monSlider = new Slider(0,10,0);
-                    monSlider.setMaxWidth(100);
-                    monSlider.setMinWidth(100);
-                    monSlider.setBlockIncrement(10);
-                    Label valueLabel = new Label();
-                    monSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                        valueLabel.setText("Valeur : " + String.format("%.2f", newValue));
-                    });
-                    monSlider.setOnMouseReleased(e->
-                    {
-                        NoteDuFilm();
-                    });
-                    description.getChildren().addAll(monSlider);
-                    lab5.setText("Note : "+ rs.getFloat("Moyenne")+"/10");
+
                     /**PARTIE AFFICHAGE CASTING*/
                     rs.close();
                     BDD_Projet_Netflix.requeteSQL("select * from casting where NomFilm = '" + nomFilm + "'");
@@ -248,8 +207,6 @@ public class pageFilm implements Initializable {
                     VBox.setMargin(lab2, new Insets(0, 0, 0, 30));
                     VBox.setMargin(lab3, new Insets(0, 0, 0, 30));
                     VBox.setMargin(lab4, new Insets(0, 0, 0, 30));
-                    VBox.setMargin(lab5, new Insets(0, 0, 0, 30));
-                    VBox.setMargin(monSlider, new Insets(0, 0, 0, 30));
 
                     syno.setText(synopsis);
                     syno.setFont(new Font(25));
@@ -341,27 +298,23 @@ public class pageFilm implements Initializable {
         });
 
     }
-
-    public void NoteDuFilm(){
-        System.out.println("la fonction slider a ete effectué ");
-        NoteFilm newNote = new NoteFilm();
-        double note=0;
-        note = (monSlider.getValue());
-        double formatted_x = Math.round(note * 100.0) / 100.0;
-        newNote.AjouterNote(nomFilm,formatted_x);
-    }
+}
 
 
-    @FXML
-    public void retourMenu(ActionEvent event) throws IOException {
-        webView.getEngine().load(null); // arrête la lecture de la vidéo
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // get reference to current stage
+/*
+    public void ouvrirFilm(String nomFilm) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageFilm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("pageAccueil.fxml"));
-        Scene scene = new Scene(root);
+        pageFilm controller = fxmlLoader.getController();
+        controller.setNomFilm(nomFilm);
+
+
+        stage.setTitle(nomFilm);
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
-        currentStage.close();
-    }
-}
+
+    }*/
+
