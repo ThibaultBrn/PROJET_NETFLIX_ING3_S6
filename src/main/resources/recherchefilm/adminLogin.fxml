@@ -13,9 +13,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="676.0" style="-fx-background-color: #302D2C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.HelloController">
    <children>
-      <TextField fx:id="identifiant" layoutX="417.0" layoutY="152.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
-      <PasswordField fx:id="motDePasse" layoutX="417.0" layoutY="208.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E50914; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
-      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="294.0" minWidth="44.0" mnemonicParsing="false" onAction="#verificationAdmin" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: #E50914;" text="Login" textFill="WHITE">
+      <TextField fx:id="identifiant" layoutX="417.0" layoutY="152.0" promptText="Identifiant" style="-fx-background-color: transparent; -fx-border-color: purple; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: white;" />
+      <PasswordField fx:id="motDePasse" layoutX="417.0" layoutY="208.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: purple; -fx-border-width: 0 0 2 0; -fx-text-fill: white;" />
+      <Button contentDisplay="CENTER" layoutX="464.0" layoutY="294.0" minWidth="44.0" mnemonicParsing="false" onAction="#verificationAdmin" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: purple;" text="Login" textFill="WHITE">
          <padding>
             <Insets bottom="10.0" />
          </padding>
@@ -26,7 +26,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <AnchorPane prefHeight="400.0" prefWidth="338.0" style="-fx-background-color: #E50914;">
+      <AnchorPane prefHeight="400.0" prefWidth="338.0" style="-fx-background-color: purple;">
          <children>
             <Label layoutX="14.0" layoutY="150.0" text="NETFLIX" textFill="#f8f5f5">
                <font>
