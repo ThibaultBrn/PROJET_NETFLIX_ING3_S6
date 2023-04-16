@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_20_11__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageAccueil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/recherchefilm/pageFilm.java" afterDir="false" />
-    </list>
+    <list default="true" id="b3024630-f395-4955-9703-b6e96b45a368" name="Changes" comment="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681612719422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film.">
+      <created>1681645660747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681645660747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +140,8 @@
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif." />
     <MESSAGE value="Merge de pagefilm dans rechercheEtPage effectue. Modifications a apporter apres verif. Ajout de certains fichiers au gitignore." />
     <MESSAGE value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge réalisé entre la base de la branche master et la partie connexion utilisateur d'Anatole et Timothée." />
+    <MESSAGE value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du casting des films qui sont affichés a l'ouverture de la page de description d'un film." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/testJavaFX$AjoutFilmApplication.ic" NAME="AjoutFilmApplication Coverage Results" MODIFIED="1681058658304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
