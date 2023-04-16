@@ -95,7 +95,18 @@ public class HelloController {
         }
         else
         {
+            FXMLLoader fxmlLoader = new FXMLLoader(pageFilmApp.class.getResource("pageAccueil.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
+            Stage stage = new Stage();
+            pageAccueil controller = fxmlLoader.getController();
+
+            stage.setTitle("Page d'accueil");
+            stage.setScene(scene);
+            stage.setMaximized(true);
+            Stage stage2 = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage2.close();
+            stage.show();
         }
     }
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="298.0" prefWidth="585.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RechercheFilm.pageAccueil">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="298.0" prefWidth="585.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recherchefilm.pageAccueil">
     <VBox alignment="TOP_CENTER" prefHeight="296.0" prefWidth="303.0" spacing="20.0" style="-fx-background-color: Black;">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
