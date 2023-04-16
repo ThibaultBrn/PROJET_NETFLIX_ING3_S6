@@ -41,7 +41,12 @@ public class pageFilm implements Initializable{
 
     private final Button listeLecture = new Button();
     boolean present = false;
-    String Pseudo = "Yassine";
+    private String Pseudo;
+
+    public void setPseudo(String pseudo)
+    {
+        Pseudo = pseudo;
+    }
     public void retourRecherche() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(pageAccueil.class.getResource("pageAccueil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
@@ -64,7 +69,7 @@ public class pageFilm implements Initializable{
         try
         {
             BaseDeDonnees BDD_Projet_Netflix = new BaseDeDonnees("projet_netflix", "root", "");
-            BDD_Projet_Netflix.requeteSQL("select NomFilm from listelecture WHERE Pseudo ='Yassine' AND NomFilm = '" + nomFilm + "'");
+            BDD_Projet_Netflix.requeteSQL("select NomFilm from listelecture WHERE Pseudo = '" + Pseudo + "' AND NomFilm = '" + nomFilm + "'");
             ResultSet resultatListe = BDD_Projet_Netflix.getResultat();
 
             if (!resultatListe.next()) {
@@ -201,7 +206,7 @@ public class pageFilm implements Initializable{
                         BaseDeDonnees base = new BaseDeDonnees("projet_netflix", "root", "");
                         if(present)
                         {
-                            base.requeteSQL("DELETE from listelecture WHERE Pseudo ='Yassine' AND NomFilm = '" + nomFilm + "'");
+                            base.requeteSQL("DELETE from listelecture WHERE Pseudo ='" + Pseudo + "' AND NomFilm = '" + nomFilm + "'");
                         }
                         else
                         {
