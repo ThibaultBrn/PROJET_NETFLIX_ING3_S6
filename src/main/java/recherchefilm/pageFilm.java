@@ -25,6 +25,8 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import example.BaseDeDonnees;
+
+import javax.swing.event.ChangeEvent;
 import java.text.DecimalFormat;
 
 import java.io.IOException;
@@ -164,17 +166,23 @@ public class pageFilm implements Initializable{
                     monSlider = new Slider(0,10,0);
                     monSlider.setMaxWidth(100);
                     monSlider.setMinWidth(100);
-                    monSlider.valueProperty().addListener(e->
+                    monSlider.setBlockIncrement(10);
+                    Label valueLabel = new Label();
+                    monSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+                        valueLabel.setText("Valeur : " + String.format("%.2f", newValue));
+                    });
+                    monSlider.setOnMouseReleased(e->
                     {
                         NoteDuFilm();
                     });
                     description.getChildren().addAll(monSlider);
-
+                    lab4.setText("Note : "+ rs.getFloat("Moyenne")+"/10");
 
                     VBox.setMargin(lab1,new Insets(0,0,0,30));
                     VBox.setMargin(lab2,new Insets(0,0,0,30));
                     VBox.setMargin(lab3,new Insets(0,0,0,30));
                     VBox.setMargin(lab4,new Insets(0,0,0,30));
+                    VBox.setMargin(valueLabel,new Insets(0,0,0,30));
                     VBox.setMargin(monSlider,new Insets(0,0,0,30));
                     Label syno = new Label();
                     String synopsis = rs.getString("Synopsis");

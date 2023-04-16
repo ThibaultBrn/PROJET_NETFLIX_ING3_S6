@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class NoteFilm {
     private BaseDeDonnees BDD;
-    private float moyenne;
+    private double moyenne;
     private int NBnote;
     public NoteFilm()
     {
@@ -20,7 +20,8 @@ public class NoteFilm {
         double NewMoyenne=0;
         RecupNote(filmANoter);
         NewMoyenne = ((this.moyenne)*(this.NBnote)+Note)/((double)this.NBnote+(float)1);
-        BDD.requeteSQL("Update films Set Moyenne = '"+NewMoyenne+"' where NomFilm = '"+filmANoter+"'");
+        double formatted_newMoyenne = Math.round(NewMoyenne * 100.0) / 100.0;
+        BDD.requeteSQL("Update films Set Moyenne = '"+formatted_newMoyenne+"' where NomFilm = '"+filmANoter+"'");
         BDD.requeteSQL("Update films set NbNote = '"+(this.NBnote+1)+"' where NomFilm = '"+filmANoter+"'");
     }
 
@@ -29,18 +30,22 @@ public class NoteFilm {
         ResultSet res=null;
         BDD.requeteSQL("Select NbNote, Moyenne from films where NomFilm = '"+_film+"'");
         res=BDD.getResultat();
+        int nombredenote = 0;
+        double Moyennne=0;
         try
         {
             while(res.next())
             {
-                this.NBnote=res.getInt("NbNote");
-                this.moyenne=res.getFloat("Moyenne");
+                nombredenote=res.getInt("NbNote");
+                Moyennne=res.getDouble("Moyenne");
+                System.out.println("la moyenne est : '"+Moyennne+"' et le nombre de note est : '"+nombredenote+"'");
             }
 
         }catch (SQLException e){
             System.out.println("Impossible d'effectuer res.next() pour la note");
         }
-
-        System.out.println("la moyenne est : '"+this.moyenne+"' et le nombre de note est : '"+this.NBnote+"'");
+        this.moyenne=Moyennne;
+        this.NBnote=nombredenote;
+        //System.out.println("la moyenne est : '"+Moyennne+"' et le nombre de note est : '"+nombredenote+"'");
     }
 }
